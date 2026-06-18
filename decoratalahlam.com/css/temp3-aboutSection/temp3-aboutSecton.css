@@ -1,0 +1,413 @@
+
+
+.temp3-about-us {
+    width: 100%;
+    margin-top: 10px;
+    /* padding-top: 10px; */
+}
+
+/************************************** */
+.temp3-about-us-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+
+    width: 75%;
+    margin: 0px auto;
+
+    text-align: start;
+}
+
+/* ========================== */
+.temp3-about-us-left {
+    width: 50%;
+}
+
+.temp3-about-us-right {
+    width: 42%;
+}
+
+.temp3-about-us-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    gap: 10px;
+}
+
+/* -------------------------- */
+.temp3-about-us-main-title {
+    padding: 4px 14px;
+    font-size: 1.17em;
+    font-weight: 700;
+
+    color: var(--secondaryColor);
+    background-color: var(--lightSecondaryColor);
+    border-radius: 10px;
+
+    width: fit-content;
+    margin: 0px;
+}
+
+/* ------------------------------ */
+.temp3-about-us-main-sub-title {
+    font-size: 2.5rem;
+    line-height: 3.5rem;
+    width: fit-content;
+    margin: 0px;
+    color: var(--primaryColor);
+}
+
+/* ================================ */
+
+.temp3-about-us-lines {
+    width: 20%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+/* ----------------------------------- */
+hr {
+    height: 4px;
+    border: none;
+    background-color: var(--secondaryColor);
+}
+
+.temp3-about-us-long-line {
+    width: 80%;
+}
+
+/* ------------------------------------- */
+
+.temp3-about-us-short-line {
+    width: 15%;
+}
+
+/* ====================================== */
+.temp3-about-us-intro {
+    color: var(--lightPrimaryColor);
+    font-size: 19px;
+    line-height: 1.8rem;
+    margin: 0%;
+}
+
+/* ====================================== */
+
+.temp3-about-us-feature-container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+}
+
+/* ===================================== */
+.temp3-about-us-feature {
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+    gap: 30px;
+}
+
+/* --------------------------------------- */
+.temp3-about-us-feature-icon {
+    color: var(--secondaryColor);
+    font-size: x-large;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: var(--lightSecondaryColor);
+    align-content: center;
+    justify-content: center;
+}
+
+.temp3-about-us-feature-icon img {
+    width: 90%;
+    height: 90%;
+    margin: 0% auto;
+}
+
+/* ----------------------------------------- */
+.temp3-about-us-feature h5 {
+    color: var(--primaryColor);
+    font-size: 18px;
+    line-height: 1.8rem;
+    margin: 0px;
+}
+
+.temp3-about-us-feature ul {
+    color: var(--lightPrimaryColor);
+    margin: 0%;
+    font-size: 16px;
+}
+
+/* *************************** */
+
+.temp3-about-us-container-imgs {
+    width: 100%;
+    border-radius: 50%;
+    position: relative;
+}
+
+/* --------------------------- */
+.temp3-about-us-common-img-style {
+    height: auto;
+    aspect-ratio: 1/1;
+    border: 10px solid var(--white);
+    border-radius: 50%;
+}
+
+/* --------------------------- */
+
+.temp3-about-us-container-imgs img:nth-child(1) {
+    width: 90%;
+    box-shadow: 0 0 40px rgba(82, 85, 90, 0.1);
+}
+
+/* --------------------------- */
+
+.temp3-about-us-container-imgs img:nth-child(2) {
+    position: absolute;
+    bottom: 25%;
+    right: -60px;
+    background-color: var(--lightSecondaryColor);
+
+    width: 40%;
+}
+
+.temp3-about-us-container-imgs img:nth-child(3) {
+    position: absolute;
+    bottom: 5%;
+    left: -10px;
+    background-color: var(--lightSecondaryColor);
+    width: 40%;
+}
+
+.temp3-about-us-container-imgs img:nth-child(4) {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    background-color: var(--lightSecondaryColor);
+
+    width: 40%;
+}
+
+
+
+/* @@@@@@@@@@@@@@@@@@ */
+@media (max-width:320px) {
+    .temp3-about-us {
+        width: 100%;
+    }
+
+    .temp3-about-us-container {
+        flex-direction: column;
+        width: 98%;
+    }
+
+    /* ========================== */
+    .temp3-about-us-left,
+    .temp3-about-us-right {
+        width: 98%;
+    }
+
+    .temp3-about-us-main-title {
+        font-size: 1.17em;
+        font-weight: 700;
+    }
+
+    .temp3-about-us-main-sub-title {
+        font-size: 1.2rem;
+        line-height: 2rem;
+    }
+
+    .temp3-about-us-intro {
+        font-size: 1rem;
+    }
+
+    .temp3-about-us-feature {
+        width: fit-content;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: start;
+        gap: 20px;
+    }
+
+    .temp3-about-us-feature h5 {
+        font-size: 1rem;
+        line-height: 1.8rem;
+    }
+
+    .temp3-about-us-container-imgs img:nth-child(2) {
+        right: 0px;
+        bottom: 0%;
+        width: 40%;
+    }
+
+    .temp3-about-us-container-imgs img:nth-child(3) {
+        position: absolute;
+        bottom: 0%;
+        left: 0px;
+
+        width: 40%;
+    }
+
+    .temp3-about-us-container-imgs img:nth-child(4) {
+        width: 40%;
+    }
+}
+
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@ */
+@media (min-width:321px) and (max-width:425px) {
+    .temp3-about-us {
+        width: 100%;
+    }
+
+    .temp3-about-us-container {
+        flex-direction: column;
+        width: 98%;
+    }
+
+    /* ========================== */
+    .temp3-about-us-left,
+    .temp3-about-us-right {
+        width: 98%;
+    }
+
+    .temp3-about-us-main-title {
+        font-size: 1.17em;
+        font-weight: 700;
+    }
+
+    .temp3-about-us-main-sub-title {
+        font-size: 1.5rem;
+        line-height: 2.5rem;
+    }
+
+    .temp3-about-us-intro {
+        font-size: 1rem;
+    }
+
+    .temp3-about-us-feature {
+        width: fit-content;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: start;
+        gap: 20px;
+    }
+
+    .temp3-about-us-feature h5 {
+        font-size: 1rem;
+        line-height: 1.8rem;
+    }
+
+    .temp3-about-us-container-imgs img:nth-child(2) {
+        right: 0px;
+        bottom: 0%;
+        width: 40%;
+    }
+
+    .temp3-about-us-container-imgs img:nth-child(3) {
+        position: absolute;
+        bottom: 0%;
+        left: 0px;
+
+        width: 40%;
+    }
+
+    .temp3-about-us-container-imgs img:nth-child(4) {
+        width: 40%;
+    }
+}
+
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@ */
+@media (min-width:426px) and (max-width:768px) {
+    .temp3-about-us {
+        width: 100%;
+    }
+
+    .temp3-about-us-container {
+        flex-direction: column;
+        width: 98%;
+    }
+
+    /* ========================== */
+    .temp3-about-us-left {
+        width: 98%;
+    }
+
+    .temp3-about-us-main-title {
+        font-size: 1.17em;
+        font-weight: 700;
+    }
+
+    .temp3-about-us-main-sub-title {
+        font-size: 1.9rem;
+        line-height: 2.5rem;
+    }
+
+    .temp3-about-us-intro {
+        font-size: 1rem;
+    }
+
+    .temp3-about-us-feature {
+        width: fit-content;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: start;
+        gap: 20px;
+    }
+
+    .temp3-about-us-feature h5 {
+        font-size: 1rem;
+        line-height: 1.8rem;
+    }
+
+    .temp3-about-us-right {
+        width: 80%;
+    }
+
+    .temp3-about-us-container-imgs img:nth-child(2) {
+        right: -60px;
+        bottom: 25%;
+        width: 40%;
+    }
+
+    .temp3-about-us-container-imgs img:nth-child(3) {
+        position: absolute;
+        bottom: 0%;
+        left: -10px;
+
+        width: 40%;
+    }
+
+    .temp3-about-us-container-imgs img:nth-child(4) {
+        width: 40%;
+    }
+}
+
+/* @@@@@@@@@@@@@@@@ */
+@media (min-width:769px) and (max-width:1440px) {
+    .temp3-about-us-container {
+        width: 98%;
+    }
+
+    .temp3-about-us-left {
+        gap: 20px;
+    }
+
+    .temp3-about-us-container-imgs img:nth-child(3) {
+        width: 40%;
+        left: 0px;
+    }
+}

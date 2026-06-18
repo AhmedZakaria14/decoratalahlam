@@ -1,0 +1,145 @@
+
+
+.temp3-contact-us {
+    width: 75%;
+    margin: 10px auto 0px auto;
+    padding-top: 40px;
+}
+
+.temp3-contact-us-main-title {
+    padding: 4px 14px;
+    font-size: 1.17rem;
+    font-weight: 700;
+
+    color: var(--secondaryColor);
+    background-color: var(--lightSecondaryColor);
+    border-radius: 10px;
+
+    width: fit-content;
+    margin: 0px;
+}
+
+.temp3-contact-us-intro {
+    color: var(--lightPrimaryColor);
+    font-size: 19px;
+    line-height: 1.8rem;
+}
+
+/* الحاوية */
+.contact-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 40px;
+}
+
+/* الكارت */
+.card {
+    background: var(--white);
+    box-shadow: 0 4px 8px var(--shadow);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease;
+
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* الخط العلوي */
+.card-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--secondaryColor);
+}
+
+/* العنوان */
+.card h3 {
+    /* font-size: 1.3rem; */
+
+    color: var(--primaryColor);
+    margin: 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    direction: ltr;
+}
+
+.card h3 i {
+    width: 50px;
+    height: 50px;
+    align-content: center;
+    border-radius: 50%;
+    background-color: rgba(46, 61, 98, 0.1);
+}
+
+/* الزرار */
+.card .btn {
+    display: inline-flex;
+    direction: ltr;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 15px;
+    background: var(--secondaryColor);
+    color: var(--white);
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 700;
+    transition: background 0.3s ease;
+}
+
+.card .email-btn {
+    width: 80%;
+    text-overflow: ellipsis;
+    display: inline-flex;
+    direction: ltr;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 15px;
+    background: var(--secondaryColor);
+    color: var(--white);
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 700;
+    transition: background 0.3s ease;
+}
+
+.card .btn:hover {
+    background: var(--activeLinkColor);
+}
+
+/* واتساب بلون خاص */
+.card .btn.whatsapp {
+    background: var(--secondaryColor);
+}
+
+.card .btn.whatsapp:hover {
+    background: var(--whatsappColor);
+}
+
+/* أيقونة */
+.card .btn i {
+    font-size: 1rem;
+}
+
+/* @@@@@@@@@@@@@@@@@@@@@@@@2 */
+
+@media (max-width:1440px) {
+    .temp3-contact-us {
+        width: 98%;
+    }
+
+    .temp3-contact-us-main-title {
+        font-size: 1.17em;
+        font-weight: 700;
+    }
+}
