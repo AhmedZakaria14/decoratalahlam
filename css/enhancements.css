@@ -39,6 +39,9 @@ body {
   transform: translateY(36px);
   transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1),
               transform 0.7s cubic-bezier(0.4,0,0.2,1);
+  will-change: opacity, transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
 }
 .reveal.visible {
   opacity: 1;
@@ -49,6 +52,9 @@ body {
   transform: translateX(-40px);
   transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1),
               transform 0.7s cubic-bezier(0.4,0,0.2,1);
+  will-change: opacity, transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
 }
 .reveal-left.visible {
   opacity: 1;
@@ -59,6 +65,9 @@ body {
   transform: translateX(40px);
   transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1),
               transform 0.7s cubic-bezier(0.4,0,0.2,1);
+  will-change: opacity, transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
 }
 .reveal-right.visible {
   opacity: 1;
@@ -396,6 +405,9 @@ body {
   position: relative;
   overflow: hidden;
   background: var(--dark-3);
+  will-change: transform, box-shadow;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 .card::before {
   content: '';
@@ -503,6 +515,9 @@ body {
   transition: transform var(--transition-med),
               box-shadow var(--transition-med);
   background: var(--dark-3);
+  will-change: transform, box-shadow;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 .blog-card:hover {
   transform: translateY(-8px) scale(1.02);
@@ -562,6 +577,9 @@ body {
   background: var(--dark-3);
   position: relative;
   overflow: hidden;
+  will-change: transform, box-shadow;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 .testimonial-card::after {
   content: '';
@@ -950,4 +968,54 @@ img.img-visible {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+
+/* ======================================================
+   HEADER CONTRAST IMPROVEMENTS — تحسين التباين في الهيدر
+   ====================================================== */
+.temp3-logo-container a span {
+  color: var(--gold-light) !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.temp3-logo-container a:hover span {
+  color: var(--gold) !important;
+  text-shadow: 0 2px 12px rgba(201, 168, 76, 0.4);
+}
+
+/* ======================================================
+   FOOTER CONTRAST IMPROVEMENTS — تحسين التباين في الفوتر
+   ====================================================== */
+footer .footer-logo img {
+  filter: brightness(1.1) contrast(1.1);
+  box-shadow: 0 2px 8px rgba(201, 168, 76, 0.2);
+}
+
+.footer-intro h1 {
+  color: var(--gold-light) !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  font-weight: 900;
+  letter-spacing: 0.5px;
+}
+
+footer h3 {
+  color: var(--gold-light) !important;
+  font-weight: 800;
+}
+
+footer a {
+  color: var(--text-light) !important;
+  transition: color var(--transition-fast), text-shadow var(--transition-fast);
+}
+
+footer a:hover {
+  color: var(--gold-light) !important;
+  text-shadow: 0 0 8px rgba(201, 168, 76, 0.3);
+}
+
+footer p {
+  color: var(--text-light) !important;
 }

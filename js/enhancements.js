@@ -71,6 +71,7 @@
 
     elements.forEach((el, i) => {
       el.classList.add('reveal');
+      el.style.willChange = 'opacity, transform';
       // stagger delay for grid items
       const parent = el.parentElement;
       if (parent) {
@@ -85,14 +86,23 @@
     // about section — لف وضم
     const aboutLeft = document.querySelector('.temp3-about-us-left');
     const aboutRight = document.querySelector('.temp3-about-us-right');
-    if (aboutLeft) { aboutLeft.classList.remove('reveal'); aboutLeft.classList.add('reveal-left'); }
-    if (aboutRight) { aboutRight.classList.remove('reveal'); aboutRight.classList.add('reveal-right'); }
+    if (aboutLeft) { 
+      aboutLeft.classList.remove('reveal'); 
+      aboutLeft.classList.add('reveal-left'); 
+      aboutLeft.style.willChange = 'opacity, transform';
+    }
+    if (aboutRight) { 
+      aboutRight.classList.remove('reveal'); 
+      aboutRight.classList.add('reveal-right'); 
+      aboutRight.style.willChange = 'opacity, transform';
+    }
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          // don't unobserve cards to allow re-animation on mobile scroll
+          requestAnimationFrame(() => {
+            entry.target.classList.add('visible');
+          });
         }
       });
     }, {
