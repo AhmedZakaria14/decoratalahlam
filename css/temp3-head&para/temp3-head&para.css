@@ -1,0 +1,64 @@
+
+
+.width-class {
+    width: fit-content;
+    margin: auto;
+}
+
+/* 1 */
+.first-degree-head {
+    font-size: 3rem;
+    line-height: 4rem;
+    font-weight: bolder;
+}
+
+/* 2 */
+.second-degree-head {
+    font-size: 2.5rem;
+    line-height: 3.5rem;
+    font-weight: bold;
+}
+
+/* 3 */
+.third-degree-head {
+    font-size: 2rem;
+    line-height: 3rem;
+    font-weight: bold;
+}
+
+/* 4 */
+.fourth-degree-head {
+    font-size: 1.8rem;
+    line-height: 2.8rem;
+    font-weight: bold;
+    color: #25D366;
+}
+
+/* 5 */
+.fifth-degree-head {
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    font-weight: bold;
+}
+
+/* 6 */
+.sixth-degree-head {
+    font-size: 1.2rem;
+    line-height: 2rem;
+}
+
+/* 7 */
+.seventh-degree-head {
+    font-size: 1.8rem;
+    line-height: 2rem;
+}
+
+/* 8 */
+.eigth-degree-head {
+    font-size: 0.8rem;
+}
+
+/* 9 */
+.ninth-degree-head {
+    font-size: 0.5rem;
+}

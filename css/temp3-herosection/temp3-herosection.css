@@ -1,0 +1,215 @@
+
+.temp3-hero-section {
+    width: 100%;
+    height: fit-content;
+    padding: 40px 0px 0px 0px;
+    background-color: var(--svgColor);
+
+}
+
+.temp3-hero-section-container {
+    width: 75%;
+    height: fit-content;
+    background-color: var(--svgColor);
+    margin: 0px auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* ============================== */
+.temp3-hero-section-container div h1 {
+    letter-spacing: 4px;
+    color: var(--primaryColor);
+    border-radius: 10px;
+
+    background-color: var(--lightGrayBg);
+    padding: 4px 14px;
+
+    width: fit-content;
+    margin: auto;
+}
+
+/* ----------------- */
+.temp3-hero-section-container div h2 {
+    font-size: 2.5rem;
+    line-height: 3.5rem;
+    width: fit-content;
+    margin: 0px auto;
+    color: var(--primaryColor);
+}
+
+/* ----------------- */
+
+.intro-list {
+    list-style: disc;
+
+    text-align: start;
+    color: var(--lightPrimaryColor);
+    font-weight: bold;
+
+    width: fit-content;
+    margin: 0% auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* ----------------- */
+
+.hero-image {
+    width: 50%;
+    margin: 0% auto;
+    height: 300px;
+}
+
+.hero-image img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    height: 300px;
+}
+
+/* ----------------- */
+.temp3-hero-contact-btn {
+    text-decoration: none;
+    color: var(--white);
+    background-color: var(--secondaryColor);
+    border-radius: 10px;
+
+    width: fit-content;
+    margin: 0% auto;
+    padding: 10px;
+    direction: ltr;
+
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+/* ============================== */
+svg {
+
+    vertical-align: middle;
+    fill: var(--svgColor);
+    height: 20vh;
+    width: 100%;
+    margin: 0%;
+    padding: 0%;
+}
+
+/* @@@@@@@@@@@@@@@@@@@@@@@@ */
+@media (max-width:320px) {
+
+    .temp3-hero-section-container {
+        width: 98%;
+        gap: 10px;
+    }
+
+    /* ----------------- */
+    .temp3-hero-section-container div h2 {
+        font-size: 1.2rem;
+        line-height: 2rem;
+    }
+
+    .intro-list {
+        font-weight: 400;
+        gap: 15px;
+    }
+
+    .hero-image {
+        width: 90%;
+
+    }
+
+
+}
+
+/* @@@@@@@@@@@@@@@@@@@@@@@ */
+@media (min-width:321px) and (max-width:425px) {
+
+    .temp3-hero-section-container {
+        width: 98%;
+        gap: 10px;
+    }
+
+    /* ----------------- */
+    .temp3-hero-section-container div h2 {
+        font-size: 1.5rem;
+        line-height: 2.5rem;
+    }
+
+    .intro-list {
+        font-weight: 470;
+        gap: 12px;
+    }
+
+    .hero-image {
+        width: 90%;
+
+    }
+
+}
+
+/* @@@@@@@@@@@@@@@@@@@@@@@ */
+@media (min-width:426px) and (max-width:783px) {
+
+    .temp3-hero-section-container {
+        width: 98%;
+        gap: 10px;
+    }
+
+    /* ----------------- */
+    .temp3-hero-section-container div h2 {
+        font-size: 1.8rem;
+        line-height: 3rem;
+    }
+
+    .intro-list {
+        font-weight: 600;
+        gap: 12px;
+    }
+
+}
+
+/* @@@@@@@@@@@@@@@@@@@@@@@ */
+@media (min-width:784px) and (max-width:1024px) {
+
+    .temp3-hero-section-container {
+        width: 98%;
+        gap: 20px;
+    }
+
+    /* ----------------- */
+    .temp3-hero-section-container div h2 {
+        font-size: 2rem;
+        line-height: 3rem;
+    }
+
+    .intro-list {
+        font-weight: 700;
+        gap: 12px;
+    }
+
+}
+
+@media (min-width:1025px) and (max-width:1314px) {
+
+    .temp3-hero-section-container {
+        width: 98%;
+        gap: 20px;
+    }
+
+    /* ----------------- */
+    .temp3-hero-section-container div h2 {
+        font-size: 2rem;
+        line-height: 3rem;
+    }
+
+    .intro-list {
+        font-weight: bold;
+        gap: 12px;
+    }
+
+}

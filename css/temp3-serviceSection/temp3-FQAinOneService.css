@@ -1,0 +1,115 @@
+
+
+.one-service-FAQ-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0px;
+}
+
+.one-service-FAQ-container .one-service-one-FAQ:nth-child(even) {
+    border-right: 1px dotted var(--secondaryColor);
+    position: relative;
+
+}
+
+.one-service-FAQ-container .one-service-one-FAQ:nth-child(odd) {
+    border-right: 1px dotted var(--secondaryColor);
+
+}
+
+.one-service-FAQ-container .one-service-one-FAQ:nth-child(odd)::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--secondaryColor);
+    box-shadow: 4px 4px 8px var(--shadow);
+    position: absolute;
+    bottom: -5px;
+    right: -5px;
+}
+
+.one-service-FAQ-container .one-service-one-FAQ:nth-child(even)::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--secondaryColor);
+    box-shadow: 10px 10px 20px var(--shadow);
+    position: absolute;
+    bottom: -5px;
+    right: -5px;
+}
+
+.one-service-one-FAQ {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    width: 300px;
+    position: relative;
+    padding: 0px 20px 20px;
+    line-height: 1.8rem;
+    border-bottom: 1px dotted var(--secondaryColor);
+    min-height: 470px;
+    max-height: 470px;
+}
+
+.one-service-FAQ-ques {
+    width: fit-content;
+    margin: 10px auto;
+    color: var(--primaryColor);
+}
+
+.one-service-FAQ-ans {
+    width: fit-content;
+    margin: 10px auto;
+    color: var(--lightPrimaryColor);
+}
+
+.one-service-FAQ-icon {
+    align-content: start;
+    position: relative;
+    width: fit-content;
+}
+
+.one-service-FAQ-icon svg {
+    fill: var(--lightSecondaryColor);
+}
+
+.one-service-FAQ-icon i {
+    position: absolute;
+    top: 25%;
+    left: 40%;
+
+    font-weight: bold;
+    font-size: 2rem;
+    color: var(--secondaryColor);
+}
+
+.one-service-one-FAQ:hover::before {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    width: 100%;
+    height: 6px;
+    background-color: var(--secondaryColor);
+}
+
+/* .one-service-one-FAQ:hover {
+    box-shadow: 4px 4px 8px var(--shadow);
+} */
+
+.one-service-one-FAQ:hover svg {
+    fill: #ddd8fd;
+}
+
+.one-service-one-FAQ:hover .one-service-FAQ-ques {
+
+    color: var(--secondaryColor);
+}

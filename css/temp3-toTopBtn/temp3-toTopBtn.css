@@ -1,0 +1,64 @@
+
+
+#scrollBtn {
+    position: fixed;
+    bottom: 70px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 50%;
+    background: var(--white);
+    padding: 0px;
+    margin: 0px;
+    box-shadow: 4px 4px 8px var(--shadow);
+    cursor: pointer;
+    z-index: 99;
+
+    transition: background 0.3s ease;
+}
+
+#scrollBtn:hover .arrow {
+    color: var(--white);
+
+}
+
+#scrollBtn:hover {
+    background: var(--primaryColor);
+}
+
+.btn-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    margin: 0%;
+    padding: 0%;
+    align-content: center;
+    text-align: center;
+}
+
+
+.arrow {
+    font-size: 20px;
+    color: var(--secondaryColor);
+    font-weight: bold;
+}
+
+
+.progress-ring {
+    /* transform: rotate(-90deg) translateX(85px) translateY(65px); */
+    position: absolute;
+    top: 0px;
+    left: 0px;
+
+    padding: 0px;
+    margin: 0px;
+}
+
+.progress-ring__circle {
+    stroke-dasharray: 163;
+
+    stroke-dashoffset: 163;
+    transition: stroke-dashoffset 0.2s linear;
+}
