@@ -1,263 +1,76 @@
-
-
-.aside-phone-number {
-
-    display: none;
-    color: var(--middleColor);
-}
-
-aside p {
-    text-decoration: none;
-    color: var(--middleColor);
-}
-
-aside a {
-    text-decoration: none;
-}
-
-.btnsStyle {
-    border: 1px solid var(--lightGray);
-    background-color: var(--white);
-    border-radius: 50%;
-    /* padding: 1% 0px; */
-    text-align: center;
-    align-content: center;
-    cursor: pointer;
-    transition: transform 0.3s linear;
-}
-
-.btnsStyle:hover {
-    transform: translateY(-5px);
-}
-
-#contactBtn {
-    display: inline-block;
-    width: 60px;
-    height: 60px;
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-}
-
 #contactContent {
     position: fixed;
-    bottom: 60px;
-    left: 20px;
+    bottom: 30px;
+    right: 20px;
+    z-index: 998;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    gap: 30px;
-    transition: display 2s;
+    gap: 10px;
 }
 
+.aside-link-whats,
 .aside-link-phone {
-    display: inline-block;
-    padding: 0px 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
     text-decoration: none;
-    color: var(--blue);
-
+    direction: ltr;
+    border-radius: 50px;
+    padding: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    width: 48px;
+    max-width: 48px;
 }
 
-.aside-link-whats {
-    display: inline-flex;
-    padding: 0px 10px;
-    text-decoration: none;
-    color: var(--whatsappColor);
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
+.aside-link-whats:hover,
+.aside-link-phone:hover {
+    max-width: 220px;
+    width: 220px;
 }
 
 .contact-word {
-    display: none;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: white;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease 0.1s;
+    padding-left: 6px;
+    font-family: 'Cairo', sans-serif;
 }
 
-.faceboook {
-    display: inline-block;
-    width: 55px;
-    height: 55px;
-    color: var(--blue);
-    font-size: xx-large;
-    font-weight: bolder;
-
+.aside-link-whats:hover .contact-word,
+.aside-link-phone:hover .contact-word {
+    opacity: 1;
 }
 
-.faceboook:hover {
-    background-color: var(--blue);
-    color: var(--white);
+.btnsStyle {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
 }
 
 .whatsappp {
-    display: inline-block;
-    width: 55px;
-    height: 55px;
-    color: var(--whatsappColor);
-    margin-top: 5px;
+    background-color: #25D366;
+    color: white;
 }
 
-.whatsappp i {
-    font-size: xx-large;
-    font-weight: bolder;
-    animation: pulse 0.8s infinite;
-}
-
-.whatsappp:hover {
-    background-color: var(--whatsappColor);
-    color: var(--white);
-
-}
-
-.whatsappp:hover i {
-    color: var(--white);
-}
+.aside-link-whats { background-color: #25D366; }
 
 .phone {
-    display: none;
-    width: 55px;
-    height: 55px;
-    font-size: xx-large;
-    font-weight: bolder;
+    background-color: var(--secondaryColor);
+    color: var(--primaryColor);
 }
 
-.phone:hover {
-    background-color: var(--gray);
-    color: var(--white);
-}
+.aside-link-phone { background-color: var(--secondaryColor); }
 
-.phone i {
-    animation: ring 0.8s infinite;
-}
-
-@keyframes ring {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    10% {
-        transform: rotate(15deg);
-    }
-
-    20% {
-        transform: rotate(-15deg);
-    }
-
-    30% {
-        transform: rotate(10deg);
-    }
-
-    40% {
-        transform: rotate(-10deg);
-    }
-
-    50% {
-        transform: rotate(5deg);
-    }
-
-    60% {
-        transform: rotate(-5deg);
-    }
-
-    70% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(0deg);
-    }
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.2);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
-
-@media (max-width: 800px) {
-
-    #contactBtn {
-        display: none;
-    }
-
-    #contactContent {
-        width: 100%;
-        margin: auto;
-        height: fit-content;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-around;
-        gap: 10px;
-        position: fixed;
-        bottom: 0px;
-        right: 0px;
-        z-index: 10;
-        padding: 13px 0px;
-        background-color: var(--white);
-        border-bottom: 1px solid black;
-        box-shadow: 0px -10px 40px var(--shadow);
-    }
-
-
-    .aside-link-whats {
-        border: 1px solid var(--secondaryColor);
-        border-radius: 10px;
-        color: var(--secondaryColor);
-    }
-
-    .aside-link-phone {
-        border: 1px solid var(--secondaryColor);
-        border-radius: 10px;
-        color: var(--secondaryColor);
-        align-content: center;
-        text-align: center;
-    }
-
-    .contact-word {
-        display: inline-flex;
-    }
-
-    .whatsappp {
-        display: inline-block;
-        width: 30px;
-        height: 30px;
-        color: var(--secondaryColor);
-        align-content: center;
-        text-align: center;
-
-        margin-top: 0px;
-    }
-
-    .whatsappp i {
-        font-size: large;
-        font-weight: bolder;
-    }
-
-    .phone {
-        display: inline-block;
-        width: 30px;
-        height: 30px;
-        color: var(--secondaryColor);
-        align-content: center;
-        text-align: center;
-
-        font-size: large;
-        font-weight: bolder;
-    }
-
-
-
-
-
-    .btnsStyle {
-        background-color: transparent;
-    }
+@media (max-width: 768px) {
+    #contactContent { bottom: 75px; right: 12px; }
 }
