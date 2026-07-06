@@ -416,25 +416,11 @@
 
                         <div class="temp3-about-us-feature">
                             <span class="temp3-about-us-feature-icon">
-                                <i class="fas fa-mobile-alt"></i>
-
-                            </span>
-
-                            <h5>
-                                نستخدم خامات عالية الجودة مع تنفيذ دقيق يضمن لك مظهرًا أنيقًا يدوم لسنوات.
-                            </h5>
-
-                        </div>
-
-                        <!-- -------- feature 5 ----------- -->
-
-                        <div class="temp3-about-us-feature">
-                            <span class="temp3-about-us-feature-icon">
                                 <i class="fa-solid fa-users-line"></i>
                             </span>
 
                             <h5>
-                                نقدم لك خدمات تشطيب نهائية عالية الجودة تضمن مظهرًا احترافيًا يعكس ذوقك ويدوم لسنوات.
+                                تقديم لك خدمات تشطيب نهائية عالية الجودة تضمن مظهرًا احترافيًا يعكس ذوقك ويدوم لسنوات.
                             </h5>
 
                         </div>
@@ -643,7 +629,7 @@
                     <div class="temp3-service-card">
                         <div class="temp3-service-img-container">
                             <a href="./wallpaper-installation-ar.html" class="temp3-service-img">
-                                <img src="./IMG/خامات-باركيه.jpeg">
+                                <img src="./IMG/ورق-جدران.jpeg" alt="تركيب ورق جدران">
                             </a>
 
                             <ul class="temp3-service-ul-links">
@@ -1627,6 +1613,43 @@
     <script src="./js/modal.js"></script>
     <script src="./js/carousel.js"></script>
     <script src="./js/testmonial.js"></script>
+    <script>
+      function animateCounters() {
+        const counters = document.querySelectorAll('.stat-number, .counter, [class*="count"], .temp3-counter-card h3');
+        
+        // إذا كانت العدادات تستخدم data attributes
+        counters.forEach(counter => {
+          const target = parseInt(counter.getAttribute('data-target') || counter.textContent) || 0;
+          if (target === 0) return;
+          
+          let current = 0;
+          const increment = Math.ceil(target / 60);
+          const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+              counter.textContent = target + (counter.dataset.suffix || '+');
+              clearInterval(timer);
+            } else {
+              counter.textContent = current;
+            }
+          }, 30);
+        });
+      }
+
+      // تشغيل عند الوصول لقسم الأرقام
+      const statsSection = document.querySelector('.stats, .numbers, [class*="stat"], [class*="counter"], .temp3-couter-grid-section');
+      if (statsSection) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              animateCounters();
+              observer.disconnect();
+            }
+          });
+        }, { threshold: 0.3 });
+        observer.observe(statsSection);
+      }
+    </script>
 </body>
 
 </html>
