@@ -38,3 +38,35 @@ main {
     /* gap: 20px; */
     /* padding-top: 30px; */
 }
+
+/* @@@@@@@@@@@@@@@@@@@@@@@ MOBILE IMPROVEMENTS @@@@@@@@@@@@@@@@@@@@@ */
+
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    main {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    section {
+        width: 100%;
+        overflow-x: hidden;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: clamp(0.85rem, 2.5vw, 1rem);
+    }
+
+    main {
+        padding: 0;
+    }
+
+    section {
+        padding: 15px 0;
+    }
+}

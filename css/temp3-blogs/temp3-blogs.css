@@ -229,3 +229,37 @@ a {
     }
 
 }
+
+/* @@@@@@@@@@@@@@@@@@@@@@@ MOBILE IMPROVEMENTS @@@@@@@@@@@@@@@@@@@@@ */
+
+@media (max-width: 768px) {
+    .blogs-cards {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px;
+        padding: 0 12px;
+    }
+
+    .blog-card {
+        padding: 12px;
+    }
+
+    .blog-card h3 {
+        font-size: clamp(0.95rem, 3.5vw, 1.1rem);
+    }
+}
+
+@media (max-width: 480px) {
+    .blogs-cards {
+        grid-template-columns: 1fr !important;
+        gap: 10px;
+        padding: 0 10px;
+    }
+
+    .blog-card {
+        padding: 10px;
+    }
+
+    .blog-card h3 {
+        font-size: clamp(0.9rem, 3vw, 1rem);
+    }
+}

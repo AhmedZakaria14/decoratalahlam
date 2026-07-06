@@ -68,8 +68,8 @@
     /* gap: 10px; */
 
     box-shadow: 4px 4px 8px var(--shadow);
-    min-width: 400px;
-    max-width: 400px;
+    min-width: clamp(280px, 90vw, 400px);
+    max-width: clamp(280px, 90vw, 400px);
     background-color: var(--primaryColor);
     cursor: pointer;
     flex-shrink: 0;
@@ -248,10 +248,10 @@
     margin: auto;
 }
 
-@media (max-width:425px) {
+@media (max-width:768px) {
     .temp3-services-sub-title {
-        font-size: 1.5rem;
-        line-height: 2rem;
+        font-size: clamp(1.3rem, 5vw, 1.5rem);
+        line-height: 1.8rem;
         width: fit-content;
         margin: 0px;
         color: var(--primaryColor);
@@ -260,7 +260,7 @@
     .temp3-service-ul-links {
         display: flex;
         flex-direction: row;
-        gap: 15px;
+        gap: 12px;
         justify-content: center;
         align-items: center;
 
@@ -272,16 +272,24 @@
         padding-bottom: 5px;
 
         position: absolute;
-        bottom: 13px;
-        left: 0px;
-        /* right: 20px; */
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
         opacity: 1;
         transition: opacity 0.3s ease-in-out, width 0.3s ease-in-out;
     }
 
     .temp3-service-card {
-        min-width: 300px;
-        max-width: 300px;
+        min-width: clamp(260px, 85vw, 350px);
+        max-width: clamp(260px, 85vw, 350px);
+    }
+
+    .temp3-service-details-title {
+        font-size: clamp(1rem, 4vw, 1.2rem);
+    }
+
+    .temp3-service-details-intro {
+        font-size: clamp(0.85rem, 3vw, 0.95rem);
     }
 
 }

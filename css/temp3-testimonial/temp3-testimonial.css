@@ -242,3 +242,44 @@
     }
 
 }
+
+/* @@@@@@@@@@@@@@@@@@@@@@@ MOBILE IMPROVEMENTS @@@@@@@@@@@@@@@@@@@@@ */
+
+@media (max-width: 768px) {
+    .testimonials-cards {
+        grid-template-columns: 1fr !important;
+        gap: 14px;
+        padding: 0 12px;
+    }
+
+    .testimonial-card {
+        padding: 16px;
+    }
+
+    .testimonial-card p {
+        font-size: clamp(0.85rem, 3vw, 0.95rem);
+    }
+
+    .testimonial-card h4 {
+        font-size: clamp(0.95rem, 3.5vw, 1.1rem);
+    }
+}
+
+@media (max-width: 480px) {
+    .testimonials-cards {
+        gap: 12px;
+        padding: 0 10px;
+    }
+
+    .testimonial-card {
+        padding: 14px;
+    }
+
+    .testimonial-card p {
+        font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+    }
+
+    .testimonial-card h4 {
+        font-size: clamp(0.9rem, 3vw, 1rem);
+    }
+}

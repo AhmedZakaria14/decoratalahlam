@@ -62,3 +62,49 @@
         display: block;
     }
 }
+
+/* @@@@@@@@@@@@@@@@@@@@@@@ MOBILE IMPROVEMENTS @@@@@@@@@@@@@@@@@@@@@ */
+
+@media (max-width: 768px) {
+    #temp3-nav {
+        display: block;
+        padding-block: 8px;
+    }
+
+    .temp3-nav-container {
+        width: 95%;
+        padding: 0 10px;
+    }
+
+    .temp3-contact-btn {
+        padding: 8px 12px;
+        font-size: clamp(0.85rem, 3vw, 0.95rem);
+        border-radius: 8px;
+    }
+
+    .temp3-link-social-icons {
+        font-size: clamp(1rem, 3vw, 1.2rem);
+    }
+}
+
+@media (max-width: 480px) {
+    #temp3-nav {
+        padding-block: 6px;
+    }
+
+    .temp3-nav-container {
+        width: 100%;
+        padding: 0 8px;
+        gap: 8px;
+    }
+
+    .temp3-contact-btn {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+        gap: 4px;
+    }
+
+    .temp3-link-social-icons {
+        font-size: 0.95rem;
+    }
+}

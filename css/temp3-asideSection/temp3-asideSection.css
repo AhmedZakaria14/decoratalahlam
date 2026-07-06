@@ -262,3 +262,45 @@ aside a {
         background-color: transparent;
     }
 }
+
+/* @@@@@@@@@@@@@@@@@@@@@@@ MOBILE IMPROVEMENTS @@@@@@@@@@@@@@@@@@@@@ */
+
+@media (max-width: 768px) {
+    .aside-section {
+        bottom: 60px;
+        right: 10px;
+        gap: 8px;
+    }
+
+    .aside-link-whats,
+    .aside-link-phone {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+    }
+
+    .aside-link-whats span,
+    .aside-link-phone span {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .aside-section {
+        bottom: 55px;
+        right: 8px;
+        gap: 6px;
+    }
+
+    .aside-link-whats,
+    .aside-link-phone {
+        width: 42px;
+        height: 42px;
+        font-size: 1.2rem;
+    }
+
+    .aside-link-whats span,
+    .aside-link-phone span {
+        font-size: 0.7rem;
+    }
+}

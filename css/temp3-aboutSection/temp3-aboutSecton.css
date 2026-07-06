@@ -411,3 +411,75 @@ hr {
         left: 0px;
     }
 }
+
+/* @@@@@@@@@@@@@@@@@@@@@@@ MOBILE IMPROVEMENTS @@@@@@@@@@@@@@@@@@@@@ */
+
+@media (max-width: 768px) {
+    .temp3-about-us-container {
+        width: 95%;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .temp3-about-us-left {
+        width: 100%;
+    }
+
+    .temp3-about-us-main-title {
+        font-size: clamp(1.3rem, 5vw, 1.5rem);
+    }
+
+    .temp3-about-us-main-sub-title {
+        font-size: clamp(1rem, 4vw, 1.2rem);
+    }
+
+    .temp3-about-us-intro {
+        font-size: clamp(0.9rem, 3.5vw, 1rem);
+        line-height: 1.6;
+    }
+
+    .temp3-about-us-feature-container {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .temp3-about-us-feature {
+        padding: 10px 12px;
+    }
+
+    .temp3-about-us-feature h5 {
+        font-size: clamp(0.85rem, 3vw, 0.95rem);
+        line-height: 1.6;
+    }
+
+    .temp3-about-us-right {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .temp3-about-us-container {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .temp3-about-us-main-title {
+        font-size: clamp(1.1rem, 4vw, 1.3rem);
+    }
+
+    .temp3-about-us-main-sub-title {
+        font-size: clamp(0.95rem, 3.5vw, 1.1rem);
+    }
+
+    .temp3-about-us-intro {
+        font-size: clamp(0.85rem, 3vw, 0.95rem);
+    }
+
+    .temp3-about-us-feature {
+        padding: 8px 10px;
+    }
+
+    .temp3-about-us-feature h5 {
+        font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+    }
+}

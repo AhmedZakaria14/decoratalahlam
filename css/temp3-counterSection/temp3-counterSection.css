@@ -219,3 +219,45 @@
         height: 400px;
     }
 }
+
+/* @@@@@@@@@@@@@@@@@@@@@@@ MOBILE IMPROVEMENTS @@@@@@@@@@@@@@@@@@@@@ */
+
+@media (max-width: 768px) {
+    .temp3-couter-grid-container {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px;
+        padding: 0 12px;
+    }
+
+    .temp3-counter-card {
+        padding: 14px 10px !important;
+    }
+
+    .temp3-counter-card h3 {
+        font-size: clamp(1.2rem, 5vw, 1.6rem) !important;
+    }
+
+    .temp3-counter-card p {
+        font-size: clamp(0.85rem, 3vw, 0.95rem);
+    }
+}
+
+@media (max-width: 480px) {
+    .temp3-couter-grid-container {
+        grid-template-columns: 1fr !important;
+        gap: 10px;
+        padding: 0 10px;
+    }
+
+    .temp3-counter-card {
+        padding: 12px 8px !important;
+    }
+
+    .temp3-counter-card h3 {
+        font-size: clamp(1rem, 4vw, 1.4rem) !important;
+    }
+
+    .temp3-counter-card p {
+        font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+    }
+}
