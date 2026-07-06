@@ -19,7 +19,7 @@
 
 .projects-section::after {
     content: "";
-    background-image: url("../../IMG/logo.png");
+    background-image: url("/IMG/logo.png");
     background-size: 200px;
     opacity: .09;
     position: absolute;
@@ -127,7 +127,7 @@
     box-shadow: var(--shadow);
     transition: transform .3s ease, box-shadow .3s ease;
     padding-bottom: 90px;
-    
+    background-image: url("/IMG/Screen-Base-Colored.svg");
     background-position: bottom center;
     background-repeat: no-repeat;
     background-size: 200px auto;

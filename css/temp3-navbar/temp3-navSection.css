@@ -1,63 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Tajawal:wght@400;700&display=swap');
+
+
 :root {
-    --primaryColor: #0D0D0D;
-    --lightPrimaryColor: #888888;
-    --secondaryColor: #C9A84C;
-    --lightSecondaryColor: rgba(201,168,76,0.15);
-    --activeLinkColor: #C9A84C;
-    --lightGrayBg: #1a1a1a;
-    --transparentDropDown: #1a1a1a;
-    --transparentColor: rgba(0,0,0,0.7);
-    --shadow: rgba(201,168,76,0.2);
-    --svgColor: #0D0D0D;
-    --white: #F5F0E8;
+    --primaryColor: #000000;
+    --lightPrimaryColor: #686b6e;
+    --secondaryColor: #8D493A;
+    --lightSecondaryColor: #8d493a28;
+    --activeLinkColor: #B17457;
+    --lightGrayBg: #f5f5f5;
+    --transparentDropDown: #B17457;
+    --transparentColor: rgba(0, 0, 0, 0.548);
+    --shadow: rgba(189, 188, 188, 0.514);
+    --svgColor: #f8fafd;
+    /* --------------------------------- */
     --whatsappColor: #25D366;
+    --white: #ffff;
     --blue: #1877F2;
-    --gray: #161616;
-    --cardBg: #161616;
-    --borderColor: rgba(201,168,76,0.25);
-    --textMuted: #aaaaaa;
+    --gray: #f8f8f8;
 }
 
 #temp3-nav {
     display: none;
     width: 100%;
-    background-color: var(--gray);
+    background-color: var(--svgColor);
     padding-block: 10px;
-    border-bottom: 1px solid var(--borderColor);
+    border-bottom: 1px solid var(--primaryColor);
 }
 
 .temp3-nav-container {
-    width: 95%;
+    width: 98%;
     margin: auto;
+
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+
     direction: ltr;
 }
 
 .temp3-contact-btn {
     text-decoration: none;
-    color: var(--primaryColor);
+    color: var(--white);
     background-color: var(--secondaryColor);
-    border-radius: 8px;
+    border-radius: 10px;
+
     width: fit-content;
-    margin: 0;
-    padding: 8px 16px;
+    margin: 0%;
+    padding: 8px;
     direction: ltr;
+
     display: flex;
     flex-direction: row;
     gap: 8px;
-    font-weight: 700;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
 }
 
-.temp3-contact-btn:hover {
-    background-color: #b8963e;
-    transform: translateY(-1px);
-}
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 
 @media (max-width:768px) {
-    #temp3-nav { display: block; }
+    #temp3-nav {
+        display: block;
+    }
 }

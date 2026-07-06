@@ -1,193 +1,413 @@
+
+
 .temp3-about-us {
     width: 100%;
-    padding: 100px 0;
-    background-color: var(--primaryColor);
-    position: relative;
-    overflow: hidden;
+    margin-top: 10px;
+    /* padding-top: 10px; */
 }
 
-.temp3-about-us::before {
-    content: "";
-    position: absolute;
-    top: -200px;
-    left: -200px;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
-    pointer-events: none;
-}
-
+/************************************** */
 .temp3-about-us-container {
-    width: 88%;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
+    gap: 40px;
+
+    width: 75%;
+    margin: 0px auto;
+
+    text-align: start;
 }
 
-/* LEFT COLUMN */
+/* ========================== */
+.temp3-about-us-left {
+    width: 50%;
+}
+
+.temp3-about-us-right {
+    width: 42%;
+}
+
 .temp3-about-us-left {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    justify-content: space-between;
+    align-items: start;
+    gap: 10px;
 }
 
+/* -------------------------- */
 .temp3-about-us-main-title {
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 900;
-    color: var(--white);
-    line-height: 1.2;
+    padding: 4px 14px;
+    font-size: 1.17em;
+    font-weight: 700;
+
+    color: var(--secondaryColor);
+    background-color: var(--lightSecondaryColor);
+    border-radius: 10px;
+
+    width: fit-content;
+    margin: 0px;
 }
 
+/* ------------------------------ */
 .temp3-about-us-main-sub-title {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--secondaryColor);
-    margin: 0;
+    font-size: 2.5rem;
+    line-height: 3.5rem;
+    width: fit-content;
+    margin: 0px;
+    color: var(--primaryColor);
 }
+
+/* ================================ */
 
 .temp3-about-us-lines {
+    width: 20%;
+
     display: flex;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
-    gap: 8px;
+    gap: 5px;
+}
+
+/* ----------------------------------- */
+hr {
+    height: 4px;
+    border: none;
+    background-color: var(--secondaryColor);
 }
 
 .temp3-about-us-long-line {
-    width: 60px;
-    height: 3px;
-    background-color: var(--secondaryColor);
-    border: none;
-    border-radius: 3px;
-    margin: 0;
+    width: 80%;
 }
+
+/* ------------------------------------- */
 
 .temp3-about-us-short-line {
-    width: 20px;
-    height: 3px;
-    background-color: var(--borderColor);
-    border: none;
-    border-radius: 3px;
-    margin: 0;
+    width: 15%;
 }
 
+/* ====================================== */
 .temp3-about-us-intro {
-    font-size: 1rem;
-    font-weight: 400;
-    color: var(--textMuted);
-    line-height: 1.8;
-    margin: 0;
+    color: var(--lightPrimaryColor);
+    font-size: 19px;
+    line-height: 1.8rem;
+    margin: 0%;
 }
+
+/* ====================================== */
 
 .temp3-about-us-feature-container {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    align-items: start;
+    gap: 20px;
 }
 
+/* ===================================== */
 .temp3-about-us-feature {
+    width: fit-content;
     display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    background-color: var(--cardBg);
-    border: 1px solid var(--borderColor);
-    border-radius: 12px;
-    padding: 16px 20px;
-    transition: all 0.3s ease;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+    gap: 30px;
 }
 
-.temp3-about-us-feature:hover {
-    border-color: var(--secondaryColor);
-    background-color: var(--lightSecondaryColor);
-    transform: translateX(-4px);
-}
-
+/* --------------------------------------- */
 .temp3-about-us-feature-icon {
-    width: 40px;
-    height: 40px;
-    min-width: 40px;
-    background-color: var(--lightSecondaryColor);
-    border: 1px solid var(--borderColor);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     color: var(--secondaryColor);
-    font-size: 1rem;
+    font-size: x-large;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: var(--lightSecondaryColor);
+    align-content: center;
+    justify-content: center;
 }
 
+.temp3-about-us-feature-icon img {
+    width: 90%;
+    height: 90%;
+    margin: 0% auto;
+}
+
+/* ----------------------------------------- */
 .temp3-about-us-feature h5 {
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--textMuted);
-    line-height: 1.6;
-    margin: 0;
+    color: var(--primaryColor);
+    font-size: 18px;
+    line-height: 1.8rem;
+    margin: 0px;
 }
 
 .temp3-about-us-feature ul {
-    list-style: none;
-    padding: 0;
-    margin: 6px 0 0 0;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
+    color: var(--lightPrimaryColor);
+    margin: 0%;
+    font-size: 16px;
 }
 
-.temp3-about-us-feature ul li {
-    font-size: 0.85rem;
-    color: var(--textMuted);
-    padding-right: 14px;
-    position: relative;
-}
-
-.temp3-about-us-feature ul li::before {
-    content: "›";
-    position: absolute;
-    right: 0;
-    color: var(--secondaryColor);
-    font-weight: 700;
-}
-
-/* RIGHT COLUMN */
-.temp3-about-us-right {
-    position: relative;
-}
+/* *************************** */
 
 .temp3-about-us-container-imgs {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 12px;
-    height: 500px;
-}
-
-.temp3-about-us-common-img-style {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 12px;
-    transition: transform 0.4s ease, filter 0.4s ease;
-    filter: brightness(0.85);
+    border-radius: 50%;
+    position: relative;
 }
 
-.temp3-about-us-common-img-style:hover {
-    transform: scale(1.03);
-    filter: brightness(1);
+/* --------------------------- */
+.temp3-about-us-common-img-style {
+    height: auto;
+    aspect-ratio: 1/1;
+    border: 10px solid var(--white);
+    border-radius: 50%;
 }
 
-.temp3-about-us-container-imgs img:first-child {
-    grid-row: 1 / 3;
-    height: 100%;
+/* --------------------------- */
+
+.temp3-about-us-container-imgs img:nth-child(1) {
+    width: 90%;
+    box-shadow: 0 0 40px rgba(82, 85, 90, 0.1);
 }
 
-@media (max-width: 900px) {
-    .temp3-about-us-container {
-        grid-template-columns: 1fr;
-        gap: 50px;
+/* --------------------------- */
+
+.temp3-about-us-container-imgs img:nth-child(2) {
+    position: absolute;
+    bottom: 25%;
+    right: -60px;
+    background-color: var(--lightSecondaryColor);
+
+    width: 40%;
+}
+
+.temp3-about-us-container-imgs img:nth-child(3) {
+    position: absolute;
+    bottom: 5%;
+    left: -10px;
+    background-color: var(--lightSecondaryColor);
+    width: 40%;
+}
+
+.temp3-about-us-container-imgs img:nth-child(4) {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    background-color: var(--lightSecondaryColor);
+
+    width: 40%;
+}
+
+
+
+/* @@@@@@@@@@@@@@@@@@ */
+@media (max-width:320px) {
+    .temp3-about-us {
+        width: 100%;
     }
 
-    .temp3-about-us-container-imgs {
-        height: 350px;
+    .temp3-about-us-container {
+        flex-direction: column;
+        width: 98%;
+    }
+
+    /* ========================== */
+    .temp3-about-us-left,
+    .temp3-about-us-right {
+        width: 98%;
+    }
+
+    .temp3-about-us-main-title {
+        font-size: 1.17em;
+        font-weight: 700;
+    }
+
+    .temp3-about-us-main-sub-title {
+        font-size: 1.2rem;
+        line-height: 2rem;
+    }
+
+    .temp3-about-us-intro {
+        font-size: 1rem;
+    }
+
+    .temp3-about-us-feature {
+        width: fit-content;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: start;
+        gap: 20px;
+    }
+
+    .temp3-about-us-feature h5 {
+        font-size: 1rem;
+        line-height: 1.8rem;
+    }
+
+    .temp3-about-us-container-imgs img:nth-child(2) {
+        right: 0px;
+        bottom: 0%;
+        width: 40%;
+    }
+
+    .temp3-about-us-container-imgs img:nth-child(3) {
+        position: absolute;
+        bottom: 0%;
+        left: 0px;
+
+        width: 40%;
+    }
+
+    .temp3-about-us-container-imgs img:nth-child(4) {
+        width: 40%;
+    }
+}
+
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@ */
+@media (min-width:321px) and (max-width:425px) {
+    .temp3-about-us {
+        width: 100%;
+    }
+
+    .temp3-about-us-container {
+        flex-direction: column;
+        width: 98%;
+    }
+
+    /* ========================== */
+    .temp3-about-us-left,
+    .temp3-about-us-right {
+        width: 98%;
+    }
+
+    .temp3-about-us-main-title {
+        font-size: 1.17em;
+        font-weight: 700;
+    }
+
+    .temp3-about-us-main-sub-title {
+        font-size: 1.5rem;
+        line-height: 2.5rem;
+    }
+
+    .temp3-about-us-intro {
+        font-size: 1rem;
+    }
+
+    .temp3-about-us-feature {
+        width: fit-content;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: start;
+        gap: 20px;
+    }
+
+    .temp3-about-us-feature h5 {
+        font-size: 1rem;
+        line-height: 1.8rem;
+    }
+
+    .temp3-about-us-container-imgs img:nth-child(2) {
+        right: 0px;
+        bottom: 0%;
+        width: 40%;
+    }
+
+    .temp3-about-us-container-imgs img:nth-child(3) {
+        position: absolute;
+        bottom: 0%;
+        left: 0px;
+
+        width: 40%;
+    }
+
+    .temp3-about-us-container-imgs img:nth-child(4) {
+        width: 40%;
+    }
+}
+
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@ */
+@media (min-width:426px) and (max-width:768px) {
+    .temp3-about-us {
+        width: 100%;
+    }
+
+    .temp3-about-us-container {
+        flex-direction: column;
+        width: 98%;
+    }
+
+    /* ========================== */
+    .temp3-about-us-left {
+        width: 98%;
+    }
+
+    .temp3-about-us-main-title {
+        font-size: 1.17em;
+        font-weight: 700;
+    }
+
+    .temp3-about-us-main-sub-title {
+        font-size: 1.9rem;
+        line-height: 2.5rem;
+    }
+
+    .temp3-about-us-intro {
+        font-size: 1rem;
+    }
+
+    .temp3-about-us-feature {
+        width: fit-content;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: start;
+        gap: 20px;
+    }
+
+    .temp3-about-us-feature h5 {
+        font-size: 1rem;
+        line-height: 1.8rem;
+    }
+
+    .temp3-about-us-right {
+        width: 80%;
+    }
+
+    .temp3-about-us-container-imgs img:nth-child(2) {
+        right: -60px;
+        bottom: 25%;
+        width: 40%;
+    }
+
+    .temp3-about-us-container-imgs img:nth-child(3) {
+        position: absolute;
+        bottom: 0%;
+        left: -10px;
+
+        width: 40%;
+    }
+
+    .temp3-about-us-container-imgs img:nth-child(4) {
+        width: 40%;
+    }
+}
+
+/* @@@@@@@@@@@@@@@@ */
+@media (min-width:769px) and (max-width:1440px) {
+    .temp3-about-us-container {
+        width: 98%;
+    }
+
+    .temp3-about-us-left {
+        gap: 20px;
+    }
+
+    .temp3-about-us-container-imgs img:nth-child(3) {
+        width: 40%;
+        left: 0px;
     }
 }
