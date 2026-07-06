@@ -190,6 +190,96 @@ aside a {
     #contactContent {
         width: 100%;
         margin: auto;
+        height: 65px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        gap: 10px;
+        position: fixed;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        z-index: 1100;
+        padding: 10px 0px;
+        background-color: var(--white);
+        border-top: 1px solid rgba(0,0,0,0.1);
+        box-shadow: 0px -5px 15px rgba(0,0,0,0.1);
+    }
+
+
+    .aside-link-whats {
+        border: 1px solid var(--secondaryColor);
+        border-radius: 10px;
+        color: var(--secondaryColor);
+        padding: 8px 15px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background-color: transparent;
+        width: 45%;
+        justify-content: center;
+    }
+
+    .aside-link-phone {
+        border: 1px solid var(--secondaryColor);
+        border-radius: 10px;
+        color: var(--secondaryColor);
+        padding: 8px 15px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background-color: transparent;
+        width: 45%;
+        justify-content: center;
+    }
+
+    .contact-word {
+        display: inline-flex;
+        font-weight: bold;
+        font-size: 0.9rem;
+    }
+
+    .whatsappp {
+        display: inline-block;
+        width: auto;
+        height: auto;
+        color: var(--secondaryColor);
+        margin-top: 0px;
+        background-color: transparent;
+        border: none;
+    }
+
+    .whatsappp i {
+        font-size: 1.2rem;
+        animation: none;
+    }
+
+    .phone {
+        display: inline-block;
+        width: auto;
+        height: auto;
+        color: var(--secondaryColor);
+        background-color: transparent;
+        border: none;
+    }
+
+    .phone i {
+        font-size: 1.2rem;
+        animation: none;
+    }
+
+    .btnsStyle {
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        border-radius: 0;
+    }
+}
+
+    #contactContent {
+        width: 100%;
+        margin: auto;
         height: 60px; /* Fixed height for better control of spacing */
         display: flex;
         flex-direction: row;
@@ -263,44 +353,3 @@ aside a {
     }
 }
 
-/* @@@@@@@@@@@@@@@@@@@@@@@ MOBILE IMPROVEMENTS @@@@@@@@@@@@@@@@@@@@@ */
-
-@media (max-width: 768px) {
-    .aside-section {
-        bottom: 60px;
-        right: 10px;
-        gap: 8px;
-    }
-
-    .aside-link-whats,
-    .aside-link-phone {
-        width: 45px;
-        height: 45px;
-        font-size: 1.3rem;
-    }
-
-    .aside-link-whats span,
-    .aside-link-phone span {
-        font-size: 0.75rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .aside-section {
-        bottom: 55px;
-        right: 8px;
-        gap: 6px;
-    }
-
-    .aside-link-whats,
-    .aside-link-phone {
-        width: 42px;
-        height: 42px;
-        font-size: 1.2rem;
-    }
-
-    .aside-link-whats span,
-    .aside-link-phone span {
-        font-size: 0.7rem;
-    }
-}
