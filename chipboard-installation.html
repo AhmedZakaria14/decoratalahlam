@@ -574,10 +574,64 @@
     <script src="./js/activeLink.js"></script>
     <script src="./js/whiteNavByScroll.js"></script>
     <script src="./js/toTopBtn.js"></script>
-    <!-- <script src="./js/pagination.js"></script> -->
+    <script src="./js/counter.js"></script>
+    <script src="./js/modal.js"></script>
+    <script src="./js/carousel.js"></script>
+    <script src="./js/testmonial.js"></script>
+    <script>
+      (function() {
+        var animated = false;
 
-<script src="./js/enhancements.js"></script>
+        function runCounters() {
+          if (animated) return;
+          animated = true;
+
+          var cards = document.querySelectorAll('.temp3-counter-card h3[data-target]');
+          cards.forEach(function(el) {
+            var target = parseInt(el.getAttribute('data-target'), 10);
+            if (!target) return;
+            var duration = 2000;
+            var steps = 60;
+            var stepTime = Math.floor(duration / steps);
+            var increment = Math.ceil(target / steps);
+            var current = 0;
+            el.textContent = '0';
+            var timer = setInterval(function() {
+              current += increment;
+              if (current >= target) {
+                el.textContent = target.toLocaleString('en') + '+';
+                clearInterval(timer);
+              } else {
+                el.textContent = current.toLocaleString('en');
+              }
+            }, stepTime);
+          });
+        }
+
+        var section = document.querySelector('.temp3-couter-grid-section');
+        if (!section) return;
+
+        if ('IntersectionObserver' in window) {
+          var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+              if (entry.isIntersecting) {
+                runCounters();
+                observer.disconnect();
+              }
+            });
+          }, { threshold: 0.2 });
+          observer.observe(section);
+        } else {
+          // fallback للمتصفحات القديمة
+          window.addEventListener('scroll', function() {
+            var rect = section.getBoundingClientRect();
+            if (rect.top < window.innerHeight) runCounters();
+          });
+        }
+      })();
+    </script>
 <script src="./js/scroll-transitions.js"></script>
+
 </body>
 
 </html>
