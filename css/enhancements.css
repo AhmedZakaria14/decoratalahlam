@@ -29,13 +29,13 @@ body {
 }
 
 @keyframes pageFadeIn {
-  from { opacity: 0; transform: translateY(8px); }
+  from { opacity: 1; /* Fallback */ transform: translateY(8px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
 /* ── Scroll-reveal utility ── */
 .reveal {
-  opacity: 0;
+  opacity: 1; /* Fallback */
   transform: translateY(36px);
   transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1),
               transform 0.7s cubic-bezier(0.4,0,0.2,1);
@@ -48,7 +48,7 @@ body {
   transform: translateY(0);
 }
 .reveal-left {
-  opacity: 0;
+  opacity: 1; /* Fallback */
   transform: translateX(-40px);
   transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1),
               transform 0.7s cubic-bezier(0.4,0,0.2,1);
@@ -61,7 +61,7 @@ body {
   transform: translateX(0);
 }
 .reveal-right {
-  opacity: 0;
+  opacity: 1; /* Fallback */
   transform: translateX(40px);
   transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1),
               transform 0.7s cubic-bezier(0.4,0,0.2,1);
@@ -204,10 +204,10 @@ body {
   animation: slideInDown 0.8s cubic-bezier(0.4,0,0.2,1) both;
   animation-delay: 0.2s;
   letter-spacing: 0.08em;
-  opacity: 0;
+  opacity: 1; /* Fallback */
 }
 @keyframes slideInDown {
-  from { opacity: 0; transform: translateY(-20px); }
+  from { opacity: 1; /* Fallback */ transform: translateY(-20px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
@@ -215,11 +215,11 @@ body {
 .temp3-hero-section-container h1 {
   animation: heroTitleIn 0.9s cubic-bezier(0.4,0,0.2,1) both;
   animation-delay: 0.4s;
-  opacity: 0;
+  opacity: 1; /* Fallback */
   text-shadow: 0 4px 32px rgba(0,0,0,0.5);
 }
 @keyframes heroTitleIn {
-  from { opacity: 0; transform: translateY(30px) scale(0.97); }
+  from { opacity: 1; /* Fallback */ transform: translateY(30px) scale(0.97); }
   to   { opacity: 1; transform: translateY(0) scale(1); }
 }
 
@@ -240,10 +240,10 @@ body {
 .temp3-hero-section-container h2 {
   animation: heroSubIn 0.9s cubic-bezier(0.4,0,0.2,1) both;
   animation-delay: 0.6s;
-  opacity: 0;
+  opacity: 1; /* Fallback */
 }
 @keyframes heroSubIn {
-  from { opacity: 0; transform: translateY(20px); }
+  from { opacity: 1; /* Fallback */ transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
@@ -251,10 +251,10 @@ body {
 .hero-cta-group {
   animation: heroCTAIn 0.9s cubic-bezier(0.4,0,0.2,1) both;
   animation-delay: 0.8s;
-  opacity: 0;
+  opacity: 1; /* Fallback */
 }
 @keyframes heroCTAIn {
-  from { opacity: 0; transform: translateY(20px); }
+  from { opacity: 1; /* Fallback */ transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
@@ -295,10 +295,10 @@ body {
 .hero-stats {
   animation: heroStatsIn 1s cubic-bezier(0.4,0,0.2,1) both;
   animation-delay: 1s;
-  opacity: 0;
+  opacity: 1; /* Fallback */
 }
 @keyframes heroStatsIn {
-  from { opacity: 0; transform: translateY(24px); }
+  from { opacity: 1; /* Fallback */ transform: translateY(24px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
@@ -470,7 +470,7 @@ body {
 
 /* أزرار الخدمة */
 .temp3-service-ul-links {
-  opacity: 0;
+  opacity: 1; /* Fallback */
   transform: translateY(10px);
   transition: opacity var(--transition-fast),
               transform var(--transition-fast);
@@ -589,7 +589,7 @@ body {
   right: 0;
   height: 3px;
   background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  opacity: 0;
+  opacity: 1; /* Fallback */
   transition: opacity var(--transition-med);
 }
 .testimonial-card:hover::after {
@@ -646,7 +646,7 @@ body {
   position: absolute;
   inset: 0;
   background: linear-gradient(135deg, rgba(201,168,76,0.08), transparent);
-  opacity: 0;
+  opacity: 1; /* Fallback */
   transition: opacity var(--transition-med);
 }
 .temp3-counter-card:hover::before {
@@ -902,8 +902,8 @@ body.menu-open {
    IMAGE LAZY LOAD FADE IN
    ====================================================== */
 img {
-  opacity: 0;
-  transition: opacity 0.5s ease;
+  opacity: 1; /* Fallback */
+  transition: opacity 0.3s ease;
 }
 img.loaded,
 img[loading="eager"] {

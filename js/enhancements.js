@@ -78,7 +78,7 @@
         const siblings = [...parent.children];
         const idx = siblings.indexOf(el);
         if (idx > 0 && idx < 8) {
-          el.style.transitionDelay = (idx * 0.08) + 's';
+          el.style.transitionDelay = (idx * 0.03) + 's';
         }
       }
     });
@@ -106,8 +106,8 @@
         }
       });
     }, {
-      threshold: 0.1,
-      rootMargin: '0px 0px -40px 0px'
+      threshold: 0.01,
+      rootMargin: '0px 0px 100px 0px'
     });
 
     document.querySelectorAll('.reveal, .reveal-left, .reveal-right')

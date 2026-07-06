@@ -17,7 +17,7 @@ aside a {
 
 .btnsStyle {
     border: 1px solid var(--lightGray);
-    background-color: var(--white);
+    background-color: #fff;
     border-radius: 50%;
     /* padding: 1% 0px; */
     text-align: center;
@@ -190,7 +190,7 @@ aside a {
     #contactContent {
         width: 100%;
         margin: auto;
-        height: 65px; /* Fixed height for better control of spacing */
+        height: 60px; /* Fixed height for better control of spacing */
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -202,7 +202,7 @@ aside a {
         right: 0px;
         z-index: 1100; /* Highest z-index to stay above everything at the bottom */
         padding: 10px 0px;
-        background-color: var(--white);
+        background-color: #fff;
         border-top: 1px solid rgba(0,0,0,0.1); /* Subtle top border */
         box-shadow: 0px -5px 15px rgba(0,0,0,0.1);
     }

@@ -30,13 +30,13 @@
         el.classList.add('scroll-reveal');
       }
       // تأخير متسلسل للعناصر
-      el.style.transitionDelay = (index * 0.05) + 's';
+      el.style.transitionDelay = (index * 0.01) + 's';
     });
 
     // IntersectionObserver للكشف عند الظهور في viewport
     const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
+      threshold: 0.01,
+      rootMargin: '0px 0px 50px 0px'
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -65,8 +65,8 @@
     }
 
     const observerOptions = {
-      threshold: 0.15,
-      rootMargin: '0px 0px -40px 0px'
+      threshold: 0.015,
+      rootMargin: '0px 0px 40px 0px'
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -105,8 +105,8 @@
     }
 
     const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -40px 0px'
+      threshold: 0.01,
+      rootMargin: '0px 0px 40px 0px'
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -211,7 +211,7 @@
       const children = container.querySelectorAll('> *');
       children.forEach((child, index) => {
         child.style.opacity = '0';
-        child.style.animation = `fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) ${index * 0.1}s forwards`;
+        child.style.animation = `fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) ${index * 0.04}s forwards`;
       });
     });
   }
@@ -224,7 +224,7 @@
 
     listItems.forEach((item, index) => {
       item.classList.add('list-item');
-      item.style.transitionDelay = (index * 0.05) + 's';
+      item.style.transitionDelay = (index * 0.01) + 's';
 
       item.addEventListener('mouseenter', () => {
         item.style.transform = 'translateX(8px)';
@@ -314,7 +314,7 @@
 
     headings.forEach((heading, index) => {
       heading.classList.add('heading-transition');
-      heading.style.transitionDelay = (index * 0.02) + 's';
+      heading.style.transitionDelay = (index * 0.01) + 's';
     });
   }
 
@@ -324,7 +324,7 @@
 
     paragraphs.forEach((p, index) => {
       p.classList.add('paragraph-transition');
-      p.style.transitionDelay = (index * 0.02) + 's';
+      p.style.transitionDelay = (index * 0.01) + 's';
     });
   }
 
