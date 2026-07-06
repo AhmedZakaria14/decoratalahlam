@@ -13,10 +13,30 @@
     margin: 0px;
     box-shadow: 4px 4px 8px var(--shadow);
     cursor: pointer;
-    z-index: 999;
+    z-index: 1000; /* Increased z-index to stay on top */
     display: none;
     opacity: 0;
     transition: background 0.3s ease, opacity 0.3s ease;
+}
+
+@media (max-width: 800px) {
+    #scrollBtn {
+        bottom: 80px; /* Positioned above the bottom contact bar (approx 60-70px) */
+        right: 15px;
+        width: 50px;
+        height: 50px;
+    }
+    .progress-ring {
+        width: 50px;
+        height: 50px;
+    }
+    .progress-ring__circle {
+        r: 23;
+        cx: 25;
+        cy: 25;
+        stroke-dasharray: 145;
+        stroke-dashoffset: 145;
+    }
 }
 
 #scrollBtn:hover .arrow {

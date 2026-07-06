@@ -36,11 +36,12 @@
     background-color: #c5a059; /* لون الموقع الذهبي */
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     .floating-contact-buttons {
-        bottom: 20px;
+        bottom: 80px; /* Positioned above the bottom contact bar */
         left: 15px;
         gap: 10px;
+        z-index: 1000;
     }
     .floating-btn {
         width: 50px;
