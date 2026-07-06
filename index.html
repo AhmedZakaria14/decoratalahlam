@@ -1614,41 +1614,56 @@
     <script src="./js/carousel.js"></script>
     <script src="./js/testmonial.js"></script>
     <script>
-      function animateCounters() {
-        const counters = document.querySelectorAll('.stat-number, .counter, [class*="count"], .temp3-counter-card h3');
-        
-        // إذا كانت العدادات تستخدم data attributes
-        counters.forEach(counter => {
-          const target = parseInt(counter.getAttribute('data-target') || counter.textContent) || 0;
-          if (target === 0) return;
-          
-          let current = 0;
-          const increment = Math.ceil(target / 60);
-          const timer = setInterval(() => {
-            current += increment;
-            if (current >= target) {
-              counter.textContent = target + (counter.dataset.suffix || '+');
-              clearInterval(timer);
-            } else {
-              counter.textContent = current;
-            }
-          }, 30);
-        });
-      }
+      (function() {
+        var animated = false;
 
-      // تشغيل عند الوصول لقسم الأرقام
-      const statsSection = document.querySelector('.stats, .numbers, [class*="stat"], [class*="counter"], .temp3-couter-grid-section');
-      if (statsSection) {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              animateCounters();
-              observer.disconnect();
-            }
+        function runCounters() {
+          if (animated) return;
+          animated = true;
+
+          var cards = document.querySelectorAll('.temp3-counter-card h3[data-target]');
+          cards.forEach(function(el) {
+            var target = parseInt(el.getAttribute('data-target'), 10);
+            if (!target) return;
+            var duration = 2000;
+            var steps = 60;
+            var stepTime = Math.floor(duration / steps);
+            var increment = Math.ceil(target / steps);
+            var current = 0;
+            el.textContent = '0';
+            var timer = setInterval(function() {
+              current += increment;
+              if (current >= target) {
+                el.textContent = target.toLocaleString('en') + '+';
+                clearInterval(timer);
+              } else {
+                el.textContent = current.toLocaleString('en');
+              }
+            }, stepTime);
           });
-        }, { threshold: 0.3 });
-        observer.observe(statsSection);
-      }
+        }
+
+        var section = document.querySelector('.temp3-couter-grid-section');
+        if (!section) return;
+
+        if ('IntersectionObserver' in window) {
+          var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+              if (entry.isIntersecting) {
+                runCounters();
+                observer.disconnect();
+              }
+            });
+          }, { threshold: 0.2 });
+          observer.observe(section);
+        } else {
+          // fallback للمتصفحات القديمة
+          window.addEventListener('scroll', function() {
+            var rect = section.getBoundingClientRect();
+            if (rect.top < window.innerHeight) runCounters();
+          });
+        }
+      })();
     </script>
 </body>
 
