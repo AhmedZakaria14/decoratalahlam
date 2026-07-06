@@ -2,7 +2,7 @@
 
 #scrollBtn {
     position: fixed;
-    bottom: 70px;
+    bottom: 30px;
     right: 20px;
     width: 60px;
     height: 60px;
@@ -13,9 +13,10 @@
     margin: 0px;
     box-shadow: 4px 4px 8px var(--shadow);
     cursor: pointer;
-    z-index: 99;
-
-    transition: background 0.3s ease;
+    z-index: 999;
+    display: none;
+    opacity: 0;
+    transition: background 0.3s ease, opacity 0.3s ease;
 }
 
 #scrollBtn:hover .arrow {

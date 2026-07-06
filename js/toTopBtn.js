@@ -1,30 +1,52 @@
 const scrollBtn = document.getElementById("scrollBtn");
-const temp3Header = document.getElementById("temp3-header");
 
-const circle = document.querySelector(".progress-ring__circle");
-const radius = circle.r.baseVal.value;
-const circumference = 2 * Math.PI * radius;
+if (scrollBtn) {
+    const circle = document.querySelector(".progress-ring__circle");
+    let circumference = 0;
 
-// إعداد طول stroke
-circle.style.strokeDasharray = `${circumference}`;
-circle.style.strokeDashoffset = `${circumference}`;
+    if (circle) {
+        const radius = circle.r.baseVal.value;
+        circumference = 2 * Math.PI * radius;
+        circle.style.strokeDasharray = `${circumference}`;
+        circle.style.strokeDashoffset = `${circumference}`;
+    }
 
-function setProgress(percent) {
-  const offset = circumference - (percent / 100) * circumference;
-  circle.style.strokeDashoffset = offset;
+    function setProgress(percent) {
+        if (circle) {
+            const offset = circumference - (percent / 100) * circumference;
+            circle.style.strokeDashoffset = offset;
+        }
+    }
+
+    function updateScrollProgress() {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        
+        if (scrollTop > 300) {
+            scrollBtn.style.display = "block";
+            scrollBtn.style.opacity = "1";
+        } else {
+            scrollBtn.style.opacity = "0";
+            setTimeout(() => {
+                if (window.scrollY <= 300) scrollBtn.style.display = "none";
+            }, 300);
+        }
+
+        if (docHeight > 0) {
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            setProgress(scrollPercent);
+        }
+    }
+
+    window.addEventListener("scroll", updateScrollProgress);
+    
+    // Initial check
+    updateScrollProgress();
+
+    scrollBtn.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
 }
-
-function updateScrollProgress() {
-  const scrollTop = window.scrollY;
-  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-  const scrollPercent = (scrollTop / docHeight) * 100;
-  setProgress(scrollPercent);
-}
-
-// تحديث أثناء السكروول
-window.addEventListener("scroll", updateScrollProgress);
-
-// عند الضغط يرجع للـ Hero Section
-scrollBtn.addEventListener("click", () => {
-  temp3Header.scrollIntoView({ behavior: "smooth" });
-});
