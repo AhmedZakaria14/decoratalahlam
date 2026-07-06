@@ -22,19 +22,34 @@ function startCounter(counter) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const counters = document.querySelectorAll(".temp3-counter-card h3");
-  const options = { threshold: 0.1 };
+  // تأخير صغير للتأكد من تحميل جميع العناصر
+  setTimeout(() => {
+    const counters = document.querySelectorAll(".temp3-counter-card h3");
+    const options = { threshold: 0.1 };
 
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        startCounter(entry.target);
-        observer.unobserve(entry.target);
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          startCounter(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, options);
+
+    counters.forEach((counter) => {
+      observer.observe(counter);
+    });
+  }, 100);
+});
+
+// fallback للتأكد من تشغيل العداد حتى لو لم يتم رؤية العناصر
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    const counters = document.querySelectorAll(".temp3-counter-card h3");
+    counters.forEach((counter) => {
+      if (counter.innerText === "0" && counter.getAttribute("data-target")) {
+        startCounter(counter);
       }
     });
-  }, options);
-
-  counters.forEach((counter) => {
-    observer.observe(counter);
-  });
+  }, 500);
 });
