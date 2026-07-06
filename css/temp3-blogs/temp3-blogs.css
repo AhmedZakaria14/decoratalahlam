@@ -263,3 +263,31 @@ a {
         font-size: clamp(0.9rem, 3vw, 1rem);
     }
 }
+
+/* @@@@@@@@@@@@@@@@@@@@@@@ MOBILE FIXES @@@@@@@@@@@@@@@@@@@@@ */
+.blogs-cards {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important;
+    gap: 25px !important;
+    width: 100% !important;
+    transform: none !important;
+    flex-wrap: wrap !important;
+}
+
+@media (max-width: 768px) {
+    .blogs-cards {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        padding: 10px !important;
+    }
+    .blog-card {
+        flex: 1 1 100% !important;
+        width: 100% !important;
+    }
+    .blog-card img {
+        width: 100% !important;
+        height: auto !important;
+        max-height: 250px !important;
+        min-height: auto !important;
+    }
+}
