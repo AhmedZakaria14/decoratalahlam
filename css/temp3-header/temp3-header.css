@@ -400,7 +400,15 @@
     }
 
     .temp3-pages::-webkit-scrollbar {
-        display: none; /* Chrome, Safari and Opera */
+        display: none;
+    }
+    
+    #temp3-header {
+        overflow: visible !important;
+    }
+    
+    .temp3-header-container {
+        overflow: visible !important;
     }
 
     .temp3-pages a {
@@ -558,7 +566,15 @@
     }
 
     .temp3-pages::-webkit-scrollbar {
-        display: none; /* Chrome, Safari and Opera */
+        display: none;
+    }
+    
+    #temp3-header {
+        overflow: visible !important;
+    }
+    
+    .temp3-header-container {
+        overflow: visible !important;
     }
 
     .temp3-pages a {
@@ -718,7 +734,15 @@
     }
 
     .temp3-pages::-webkit-scrollbar {
-        display: none; /* Chrome, Safari and Opera */
+        display: none;
+    }
+    
+    #temp3-header {
+        overflow: visible !important;
+    }
+    
+    .temp3-header-container {
+        overflow: visible !important;
     }
 
     #temp3-close-btn-container {
@@ -857,7 +881,15 @@
     }
 
     .temp3-pages::-webkit-scrollbar {
-        display: none; /* Chrome, Safari and Opera */
+        display: none;
+    }
+    
+    #temp3-header {
+        overflow: visible !important;
+    }
+    
+    .temp3-header-container {
+        overflow: visible !important;
     }
 
     .temp3-pages a {
