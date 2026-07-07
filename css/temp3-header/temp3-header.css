@@ -394,14 +394,13 @@
         background-color: var(--primaryColor);
 
         overflow-y: auto;
-        scrollbar-width: none;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
         box-sizing: border-box;
-
     }
 
-
     .temp3-pages::-webkit-scrollbar {
-        scrollbar-width: none;
+        display: none; /* Chrome, Safari and Opera */
     }
 
     .temp3-pages a {
@@ -553,14 +552,13 @@
         background-color: var(--primaryColor);
 
         overflow-y: auto;
-        scrollbar-width: none;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
         box-sizing: border-box;
-
     }
 
-
     .temp3-pages::-webkit-scrollbar {
-        scrollbar-width: none;
+        display: none; /* Chrome, Safari and Opera */
     }
 
     .temp3-pages a {
@@ -714,14 +712,13 @@
         background-color: var(--primaryColor);
 
         overflow-y: auto;
-        scrollbar-width: none;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
         box-sizing: border-box;
-
     }
 
-
     .temp3-pages::-webkit-scrollbar {
-        scrollbar-width: none;
+        display: none; /* Chrome, Safari and Opera */
     }
 
     #temp3-close-btn-container {
@@ -854,14 +851,13 @@
         background-color: var(--primaryColor);
 
         overflow-y: auto;
-        scrollbar-width: none;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
         box-sizing: border-box;
-
     }
 
-
     .temp3-pages::-webkit-scrollbar {
-        scrollbar-width: none;
+        display: none; /* Chrome, Safari and Opera */
     }
 
     .temp3-pages a {
