@@ -1,4 +1,43 @@
+# Robots.txt for decoratalahlam.vercel.app
+# تحسين SEO وتوجيه محركات البحث
+
 User-agent: *
 Allow: /
+Disallow: /js/
+Disallow: /css/
+Disallow: /IMG/
+Disallow: /*.json$
+Disallow: /.git/
+Disallow: /.env
 
+# تحديد وقت الزحف (Crawl Delay)
+Crawl-delay: 1
+
+# تحديد معدل الطلبات
+Request-rate: 30/1m
+
+# Sitemap
 Sitemap: https://decoratalahlam.vercel.app/sitemap.xml
+
+# Google Search Console
+User-agent: Googlebot
+Allow: /
+
+# Bing
+User-agent: Bingbot
+Allow: /
+
+# Yandex
+User-agent: YandexBot
+Allow: /
+
+# Baidu
+User-agent: Baiduspider
+Allow: /
+
+# تحديد الصفحات التي لا تحتاج إلى الزحف
+User-agent: *
+Disallow: /*?*
+Disallow: /*&*
+Disallow: /*.pdf$
+Disallow: /*.doc$

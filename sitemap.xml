@@ -2,57 +2,97 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://decoratalahlam.vercel.app/</loc>
-    <lastmod>2026-07-06</lastmod>
+    <lastmod>2026-07-07</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://decoratalahlam.vercel.app/about-us.html</loc>
-    <lastmod>2026-07-06</lastmod>
+    <lastmod>2026-07-07</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://decoratalahlam.vercel.app/services-ar.html</loc>
-    <lastmod>2026-07-06</lastmod>
+    <lastmod>2026-07-07</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://decoratalahlam.vercel.app/blog.html</loc>
+    <lastmod>2026-07-07</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://decoratalahlam.vercel.app/contact-us.html</loc>
-    <lastmod>2026-07-06</lastmod>
+    <lastmod>2026-07-07</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://decoratalahlam.vercel.app/gypsum-board-ar.html</loc>
-    <lastmod>2026-07-06</lastmod>
+    <lastmod>2026-07-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://decoratalahlam.vercel.app/marble-alternative-ar.html</loc>
-    <lastmod>2026-07-06</lastmod>
+    <lastmod>2026-07-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://decoratalahlam.vercel.app/wallpaper-installation-ar.html</loc>
-    <lastmod>2026-07-06</lastmod>
+    <lastmod>2026-07-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://decoratalahlam.vercel.app/parquet-installation-ar.html</loc>
-    <lastmod>2026-07-06</lastmod>
+    <lastmod>2026-07-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://decoratalahlam.vercel.app/wood-cladding-ar.html</loc>
-    <lastmod>2026-07-06</lastmod>
+    <lastmod>2026-07-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://decoratalahlam.vercel.app/chipboard-installation-ar.html</loc>
-    <lastmod>2026-07-06</lastmod>
+    <lastmod>2026-07-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://decoratalahlam.vercel.app/interior-decor-ar.html</loc>
-    <lastmod>2026-07-06</lastmod>
+    <lastmod>2026-07-07</lastmod>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://decoratalahlam.vercel.app/best-paints-decor-riyadh.html</loc>
+    <lastmod>2026-07-07</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://decoratalahlam.vercel.app/difference-shipboard-alternative.html</loc>
+    <lastmod>2026-07-07</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://decoratalahlam.vercel.app/paints-east-riyadh.html</loc>
+    <lastmod>2026-07-07</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://decoratalahlam.vercel.app/paints-north-riyadh.html</loc>
+    <lastmod>2026-07-07</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://decoratalahlam.vercel.app/shipboard-alternative-riyadh.html</loc>
+    <lastmod>2026-07-07</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://decoratalahlam.vercel.app/shipboard-installation.html</loc>
+    <lastmod>2026-07-07</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://decoratalahlam.vercel.app/shipboard-riyadh.html</loc>
+    <lastmod>2026-07-07</lastmod>
+    <priority>0.6</priority>
   </url>
 </urlset>
