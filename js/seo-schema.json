@@ -2,9 +2,9 @@
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "ديكورات الاحلام",
-  "image": "https://decoratalahlam.vercel.app/IMG/logo.png",
-  "@id": "https://decoratalahlam.vercel.app/",
-  "url": "https://decoratalahlam.vercel.app/",
+  "image": "https://decoratalahlam.com/IMG/logo.png",
+  "@id": "https://decoratalahlam.com/",
+  "url": "https://decoratalahlam.com/",
   "telephone": "+966531169312",
   "address": {
     "@type": "PostalAddress",
