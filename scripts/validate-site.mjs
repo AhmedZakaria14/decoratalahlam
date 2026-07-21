@@ -22,6 +22,8 @@ for (const file of htmlFiles) {
   if (html.includes("decoratalahlam.vercel.app")) failures.push(`${file}: stale Vercel domain found`);
   if (!html.includes('href="https://nasharhub.com/"')) failures.push(`${file}: NasharHub developer credit is missing`);
   if (!html.includes('rel="noopener noreferrer"')) failures.push(`${file}: developer credit external-link protection is missing`);
+  checkCount("visible breadcrumb", /<nav\s+class=["']visible-breadcrumb["']/gi);
+  if (!html.includes('aria-label="مسار التنقل"')) failures.push(`${file}: visible breadcrumb has no accessible label`);
 
   for (const match of html.matchAll(/<script\s+type=["']application\/ld\+json["']>([\s\S]*?)<\/script>/gi)) {
     try {
@@ -54,6 +56,9 @@ for (const type of ["css", "js"]) {
 }
 
 if (!fs.readFileSync(path.join(root, "index.html"), "utf8").includes("<!-- FAQ CONTENT START -->")) failures.push("Visible FAQ content is missing from index.html");
+const homeHtml = fs.readFileSync(path.join(root, "index.html"), "utf8");
+const homeTitle = (homeHtml.match(/<title>([^<]+)<\/title>/i) || [null, ""])[1].trim();
+if (homeTitle.length < 50 || homeTitle.length > 60) failures.push(`index.html: title length is ${homeTitle.length}, expected 50-60 characters`);
 if (!fs.readFileSync(path.join(root, "robots.txt"), "utf8").includes("Sitemap: https://decoratalahlam.com/sitemap.xml")) failures.push("robots.txt has the wrong sitemap URL");
 const cloudflareHeaders = fs.readFileSync(path.join(root, "_headers"), "utf8");
 if (!cloudflareHeaders.includes("Strict-Transport-Security")) failures.push("Cloudflare HSTS header configuration is missing");
