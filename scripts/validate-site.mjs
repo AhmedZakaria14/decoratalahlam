@@ -81,6 +81,22 @@ const llms = fs.readFileSync(path.join(root, "llms.txt"), "utf8");
 if (!llms.includes("https://decoratalahlam.com/sitemap.xml")) failures.push("llms.txt does not reference the production sitemap");
 if (llms.includes("decoratalahlam.vercel.app")) failures.push("llms.txt contains the stale Vercel domain");
 
+for (const file of ["difference-shipboard-alternative.html", "shipboard-alternative-riyadh.html", "shipboard-installation.html", "shipboard-riyadh.html"]) {
+  const html = fs.readFileSync(path.join(root, file), "utf8");
+  const blogImages = [...html.matchAll(/<img\b[^>]*src=["']\.\/IMG\/blog\/([^"']+)["'][^>]*>/gi)];
+  if (blogImages.length !== 6) failures.push(`${file}: expected 6 contextual blog images, found ${blogImages.length}`);
+  for (const match of blogImages) {
+    if (!/\balt=["'][^"']+["']/i.test(match[0])) failures.push(`${file}: blog image is missing descriptive alt text (${match[1]})`);
+    if (!match[1].endsWith(".webp")) failures.push(`${file}: blog image is not WebP (${match[1]})`);
+  }
+  if (!/<meta property="og:image" content="https:\/\/decoratalahlam\.com\/IMG\/blog\/[^"]+\.webp">/.test(html)) failures.push(`${file}: optimized Open Graph image is missing`);
+}
+
+for (const image of fs.readdirSync(path.join(root, "IMG", "blog"))) {
+  const bytes = fs.statSync(path.join(root, "IMG", "blog", image)).size;
+  if (bytes > 200_000) failures.push(`IMG/blog/${image}: optimized image is larger than 200 KB`);
+}
+
 if (failures.length) {
   console.error(failures.join("\n"));
   process.exit(1);
