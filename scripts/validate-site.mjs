@@ -53,7 +53,15 @@ for (const type of ["css", "js"]) {
 
 if (!fs.readFileSync(path.join(root, "index.html"), "utf8").includes("<!-- FAQ CONTENT START -->")) failures.push("Visible FAQ content is missing from index.html");
 if (!fs.readFileSync(path.join(root, "robots.txt"), "utf8").includes("Sitemap: https://decoratalahlam.com/sitemap.xml")) failures.push("robots.txt has the wrong sitemap URL");
-if (!fs.readFileSync(path.join(root, "vercel.json"), "utf8").includes("Strict-Transport-Security")) failures.push("HSTS header configuration is missing");
+const cloudflareHeaders = fs.readFileSync(path.join(root, "_headers"), "utf8");
+if (!cloudflareHeaders.includes("Strict-Transport-Security")) failures.push("Cloudflare HSTS header configuration is missing");
+if (!cloudflareHeaders.includes("/sitemap.xml") || !cloudflareHeaders.includes("application/xml")) failures.push("Cloudflare sitemap headers are missing");
+if (!cloudflareHeaders.includes("https://:project.pages.dev/*") || !cloudflareHeaders.includes("noindex")) failures.push("Cloudflare pages.dev noindex rule is missing");
+
+const cloudflareRedirects = fs.readFileSync(path.join(root, "_redirects"), "utf8");
+for (const route of ["gypsum-board", "marble-alternative", "wallpaper-installation", "parquet-installation", "wood-cladding", "chipboard-installation", "interior-decor"]) {
+  if (!cloudflareRedirects.includes(`/${route} /${route}-ar 308`)) failures.push(`Cloudflare canonical redirect is missing for ${route}`);
+}
 
 const sitemap = fs.readFileSync(path.join(root, "sitemap.xml"), "utf8");
 const sitemapUrls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1]);

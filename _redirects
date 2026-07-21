@@ -1,0 +1,24 @@
+# Canonical routes for Cloudflare Pages
+/about /about-us 308
+/contact /contact-us 308
+/services /services-ar 308
+/gypsum-board /gypsum-board-ar 308
+/marble-alternative /marble-alternative-ar 308
+/wallpaper-installation /wallpaper-installation-ar 308
+/parquet-installation /parquet-installation-ar 308
+/wood-cladding /wood-cladding-ar 308
+/chipboard-installation /chipboard-installation-ar 308
+/interior-decor /interior-decor-ar 308
+
+# Normalize explicit HTML URLs to their clean canonical routes
+/index.html / 308
+/about-us.html /about-us 308
+/contact-us.html /contact-us 308
+/services-ar.html /services-ar 308
+/gypsum-board-ar.html /gypsum-board-ar 308
+/marble-alternative-ar.html /marble-alternative-ar 308
+/wallpaper-installation-ar.html /wallpaper-installation-ar 308
+/parquet-installation-ar.html /parquet-installation-ar 308
+/wood-cladding-ar.html /wood-cladding-ar 308
+/chipboard-installation-ar.html /chipboard-installation-ar 308
+/interior-decor-ar.html /interior-decor-ar 308
