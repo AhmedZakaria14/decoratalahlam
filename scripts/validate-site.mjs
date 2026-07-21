@@ -20,6 +20,8 @@ for (const file of htmlFiles) {
   if (!html.includes("hhP-tCyyQHvpel6nJ-1nRwhdmsply67V7k7QaIguOjI")) failures.push(`${file}: Search Console verification is missing`);
   if (html.indexOf("<meta charset=") > 1024) failures.push(`${file}: charset declaration is too late in the document`);
   if (html.includes("decoratalahlam.vercel.app")) failures.push(`${file}: stale Vercel domain found`);
+  if (!html.includes('href="https://nasharhub.com/"')) failures.push(`${file}: NasharHub developer credit is missing`);
+  if (!html.includes('rel="noopener noreferrer"')) failures.push(`${file}: developer credit external-link protection is missing`);
 
   for (const match of html.matchAll(/<script\s+type=["']application\/ld\+json["']>([\s\S]*?)<\/script>/gi)) {
     try {
