@@ -55,6 +55,24 @@ if (!fs.readFileSync(path.join(root, "index.html"), "utf8").includes("<!-- FAQ C
 if (!fs.readFileSync(path.join(root, "robots.txt"), "utf8").includes("Sitemap: https://decoratalahlam.com/sitemap.xml")) failures.push("robots.txt has the wrong sitemap URL");
 if (!fs.readFileSync(path.join(root, "vercel.json"), "utf8").includes("Strict-Transport-Security")) failures.push("HSTS header configuration is missing");
 
+const sitemap = fs.readFileSync(path.join(root, "sitemap.xml"), "utf8");
+const sitemapUrls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1]);
+if (new Set(sitemapUrls).size !== sitemapUrls.length) failures.push("sitemap.xml contains duplicate URLs");
+for (const url of sitemapUrls) {
+  if (!url.startsWith("https://decoratalahlam.com/")) failures.push(`sitemap.xml contains a non-production URL: ${url}`);
+  const route = new URL(url).pathname.replace(/^\//, "") || "index";
+  const file = route === "index" ? "index.html" : `${route}.html`;
+  if (!fs.existsSync(path.join(root, file))) failures.push(`sitemap.xml route has no HTML file: ${url}`);
+  else {
+    const html = fs.readFileSync(path.join(root, file), "utf8");
+    if (!html.includes(`<link rel="canonical" href="${url}">`)) failures.push(`sitemap URL and canonical differ: ${url}`);
+  }
+}
+
+const llms = fs.readFileSync(path.join(root, "llms.txt"), "utf8");
+if (!llms.includes("https://decoratalahlam.com/sitemap.xml")) failures.push("llms.txt does not reference the production sitemap");
+if (llms.includes("decoratalahlam.vercel.app")) failures.push("llms.txt contains the stale Vercel domain");
+
 if (failures.length) {
   console.error(failures.join("\n"));
   process.exit(1);

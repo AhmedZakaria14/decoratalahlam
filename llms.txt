@@ -32,3 +32,8 @@ Decorat Al Ahlam provides interior design and decoration services for homes, vil
 - Parquet: https://decoratalahlam.com/parquet-installation-ar
 - Wood cladding: https://decoratalahlam.com/wood-cladding-ar
 - Chipboard: https://decoratalahlam.com/chipboard-installation-ar
+
+## Discovery
+
+- Sitemap: https://decoratalahlam.com/sitemap.xml
+- Robots: https://decoratalahlam.com/robots.txt

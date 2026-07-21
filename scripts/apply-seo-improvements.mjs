@@ -5,6 +5,19 @@ const root = process.cwd();
 const baseUrl = "https://decoratalahlam.com";
 const phone = "+966531169312";
 
+const canonicalRoutes = new Map([
+  ["about.html", "about-us"],
+  ["contact.html", "contact-us"],
+  ["services.html", "services-ar"],
+  ["gypsum-board.html", "gypsum-board-ar"],
+  ["marble-alternative.html", "marble-alternative-ar"],
+  ["wallpaper-installation.html", "wallpaper-installation-ar"],
+  ["parquet-installation.html", "parquet-installation-ar"],
+  ["wood-cladding.html", "wood-cladding-ar"],
+  ["chipboard-installation.html", "chipboard-installation-ar"],
+  ["interior-decor.html", "interior-decor-ar"]
+]);
+
 const faq = [
   ["ما هي الخدمات التي تقدمها ديكورات الأحلام؟", "نقدم خدمات متكاملة تشمل تركيب جبس بورد، بديل الرخام، ورق جدران، باركيه، تكسيات خشبية، وشيبورد، بالإضافة إلى تصميم وتنفيذ الديكورات الداخلية المتكاملة."],
   ["هل توفرون خدماتكم خارج مدينة الرياض؟", "نتواجد بشكل رئيسي في مدينة الرياض بالمملكة العربية السعودية، ونخدم المشاريع السكنية والتجارية في المنطقة."],
@@ -29,7 +42,8 @@ function cleanText(value) {
 }
 
 function canonicalFor(file) {
-  return file === "index.html" ? `${baseUrl}/` : `${baseUrl}/${file.replace(/\.html$/, "")}`;
+  if (file === "index.html") return `${baseUrl}/`;
+  return `${baseUrl}/${canonicalRoutes.get(file) || file.replace(/\.html$/, "")}`;
 }
 
 function serviceNameFor(file) {
@@ -154,7 +168,7 @@ for (const file of fs.readdirSync(root).filter(name => name.endsWith(".html"))) 
   const h1 = cleanText((contentHtml.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i) || [null, title])[1]) || title;
   const canonical = canonicalFor(file);
   const schema = JSON.stringify(graphFor(file, title, h1), null, 2);
-  const headBlock = `\n<!-- SEO AUDIT ENHANCEMENTS START -->\n<!-- Google Tag Manager -->\n<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\nnew Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\nj=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\n'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\n})(window,document,'script','dataLayer','GTM-TDMVDGZL');</script>\n<!-- End Google Tag Manager -->\n<script async src="https://www.googletagmanager.com/gtag/js?id=G-DQNXN01128"></script>\n<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DQNXN01128');</script>\n<meta name="google-site-verification" content="hhP-tCyyQHvpel6nJ-1nRwhdmsply67V7k7QaIguOjI">\n<link rel="canonical" href="${canonical}">\n<meta property="og:url" content="${canonical}">\n<meta property="og:image" content="${baseUrl}/IMG/logo.png">\n<link rel="stylesheet" href="./css/seo-enhancements.css">\n<script type="application/ld+json">\n${schema}\n</script>\n<!-- SEO AUDIT ENHANCEMENTS END -->\n`;
+  const headBlock = `\n<!-- SEO AUDIT ENHANCEMENTS START -->\n<!-- Google Tag Manager -->\n<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\nnew Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\nj=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\n'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\n})(window,document,'script','dataLayer','GTM-TDMVDGZL');</script>\n<!-- End Google Tag Manager -->\n<script async src="https://www.googletagmanager.com/gtag/js?id=G-DQNXN01128"></script>\n<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-DQNXN01128');</script>\n<meta name="google-site-verification" content="hhP-tCyyQHvpel6nJ-1nRwhdmsply67V7k7QaIguOjI">\n<link rel="canonical" href="${canonical}">\n<meta property="og:url" content="${canonical}">\n<meta property="og:image" content="${baseUrl}/IMG/logo.png">\n<link rel="stylesheet" href="./css/seo-enhancements.min.css">\n<script type="application/ld+json">\n${schema}\n</script>\n<!-- SEO AUDIT ENHANCEMENTS END -->\n`;
 
   if (/<meta\s+charset=["'][^"']+["'][^>]*>/i.test(html)) {
     html = html.replace(/(<meta\s+charset=["'][^"']+["'][^>]*>)/i, `$1${headBlock}`);

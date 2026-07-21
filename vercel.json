@@ -1,5 +1,25 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "decoratalahlam.vercel.app" }],
+      "destination": "https://decoratalahlam.com/:path*",
+      "permanent": true
+    },
+    { "source": "/about", "destination": "/about-us", "permanent": true },
+    { "source": "/contact", "destination": "/contact-us", "permanent": true },
+    { "source": "/services", "destination": "/services-ar", "permanent": true },
+    { "source": "/gypsum-board", "destination": "/gypsum-board-ar", "permanent": true },
+    { "source": "/marble-alternative", "destination": "/marble-alternative-ar", "permanent": true },
+    { "source": "/wallpaper-installation", "destination": "/wallpaper-installation-ar", "permanent": true },
+    { "source": "/parquet-installation", "destination": "/parquet-installation-ar", "permanent": true },
+    { "source": "/wood-cladding", "destination": "/wood-cladding-ar", "permanent": true },
+    { "source": "/chipboard-installation", "destination": "/chipboard-installation-ar", "permanent": true },
+    { "source": "/interior-decor", "destination": "/interior-decor-ar", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/llms.txt",
@@ -11,6 +31,23 @@
         {
           "key": "Cache-Control",
           "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/xml; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "all"
         }
       ]
     },
