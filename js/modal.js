@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const modalDesc = document.getElementById("modal-desc");
   const modalLink = document.getElementById("modal-link");
 
+  if (!modal || !modalImg || !modalTitle || !modalDesc || !modalLink) return;
+
   modal.style.display = "none";
 
   const projects = document.querySelectorAll(".project");
@@ -36,5 +38,6 @@ document.addEventListener("DOMContentLoaded", function () {
     modal.style.display = "none";
   }
 
-  document.querySelector(".close").addEventListener("click", closeModal);
+  const closeButton = document.querySelector(".close");
+  if (closeButton) closeButton.addEventListener("click", closeModal);
 });

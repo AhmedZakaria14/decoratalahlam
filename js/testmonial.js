@@ -12,7 +12,9 @@ const totaltestimonialslides = testimonials_slides.length;
 
 // نعمل نسخة من أول X عناصر (حسب العرض)
 function cloneSlides() {
-  for (let i = 0; i < testimonials_slidesPerView; i++) {
+  if (!testimonials_track || totaltestimonialslides === 0) return;
+  const clonesCount = Math.min(testimonials_slidesPerView, totaltestimonialslides);
+  for (let i = 0; i < clonesCount; i++) {
     const clone = testimonials_slides[i].cloneNode(true);
     testimonials_track.appendChild(clone);
   }
@@ -20,6 +22,7 @@ function cloneSlides() {
 cloneSlides();
 
 function showtestimonialslide(index) {
+  if (!testimonials_track) return;
   // ⚡ بدون السالب → السلايدر يمشي لليمين (زي ما انتِ عايزة)
   const offset = index * (100 / testimonials_slidesPerView);
   testimonials_track.style.transform = `translateX(${offset}%)`;
@@ -49,6 +52,7 @@ function movePrevSlidetestomonial() {
 }
 
 function starttestimonialslider() {
+  if (!testimonials_track || totaltestimonialslides === 0) return;
   setInterval(() => {
     moveNextSlidetestomonial();
   }, 5000);
@@ -59,18 +63,20 @@ starttestimonialslider();
 let startXtestomonial = 0;
 let endXtestomonial = 0;
 
-testimonials_track.addEventListener("touchstart", (e) => {
-  startXtestomonial = e.touches[0].clientX;
-});
+if (testimonials_track) {
+  testimonials_track.addEventListener("touchstart", (e) => {
+    startXtestomonial = e.touches[0].clientX;
+  });
 
-testimonials_track.addEventListener("touchend", (e) => {
-  endXtestomonial = e.changedTouches[0].clientX;
-  handleSwipe();
-});
+  testimonials_track.addEventListener("touchend", (e) => {
+    endXtestomonial = e.changedTouches[0].clientX;
+    handleSwipetestomonial();
+  });
+}
 
 function handleSwipetestomonial() {
   let difftestomonial = startXtestomonial - endXtestomonial;
-  if (Math.abs(diff) > 50) {
+  if (Math.abs(difftestomonial) > 50) {
     if (difftestomonial > 0) {
       movePrevSlidetestomonial(); // سحب لليمين → يرجع للخلف
     } else {

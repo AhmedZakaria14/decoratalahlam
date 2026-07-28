@@ -101,6 +101,19 @@ function addShellEnhancements(source) {
 </body>`,
   );
 
+  for (const legacyScript of [
+    "modal.min.js",
+    "particles.min.js",
+    "scroll-transitions.min.js",
+    "testmonial.min.js",
+  ]) {
+    const escaped = legacyScript.replace(".", "\\.");
+    next = next.replace(
+      new RegExp(`src=["']\\./js/${escaped}(?:\\?v=[^"']+)?["']`, "g"),
+      `src="./js/${legacyScript}?v=20260728-1"`,
+    );
+  }
+
   return next;
 }
 
