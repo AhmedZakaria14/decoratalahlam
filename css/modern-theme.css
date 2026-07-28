@@ -133,6 +133,10 @@ body.modern-site :focus-visible {
   letter-spacing: -0.02em;
 }
 
+#temp3-header .temp3-logo-container a span {
+  color: var(--modern-white) !important;
+}
+
 #temp3-header .temp3-logo-container img {
   width: 54px !important;
   height: 54px !important;
@@ -343,6 +347,7 @@ body.modern-site :focus-visible {
   min-height: 550px;
   margin: 0 auto !important;
   padding: 0 !important;
+  background: transparent !important;
 }
 
 .page-home .temp3-hero-section-container > div:first-child {
@@ -361,6 +366,7 @@ body.modern-site :focus-visible {
   font-weight: 900 !important;
   line-height: 0.98 !important;
   letter-spacing: -0.065em;
+  background: transparent !important;
 }
 
 .page-home .temp3-hero-section h1::before {
