@@ -79,7 +79,7 @@ function addShellEnhancements(source) {
   next = next.replace(
     /<\/head>/i,
     `    <!-- MODERN THEME START -->
-    <link rel="stylesheet" href="./css/modern-theme.min.css">
+    <link rel="stylesheet" href="./css/modern-theme.min.css?v=20260728-2">
     <!-- MODERN THEME END -->
 </head>`,
   );
@@ -96,7 +96,7 @@ function addShellEnhancements(source) {
   next = next.replace(
     /<\/body>/i,
     `    <!-- MODERN UI START -->
-    <script src="./js/modern-ui.min.js" defer></script>
+    <script src="./js/modern-ui.min.js?v=20260728-2" defer></script>
     <!-- MODERN UI END -->
 </body>`,
   );
