@@ -249,7 +249,6 @@ var palette = ["#FE7F2D", "#6C5CE7", "#74B9FF", "#8D493A", "#FFEAA7"]; // ألو
 
 // تشغيل للـ Hero (خليط أشكال وعدد كبير)
 var heroCanvas = document.querySelector('canvas[data-role="hero"]'); // الحصول على كانفاس الـ Hero
-if (heroCanvas) {
 runParticles(heroCanvas, {
   count: 20, // عدد الجسيمات في الـ Hero
   mixed: true, // خليط: دوائر + خماسيات
@@ -262,7 +261,6 @@ runParticles(heroCanvas, {
   lifeMax: 6, // أكبر مدة دورة
   minAlpha: 0.05, // أقل شفافية حتى لا تختفي فجأة
 });
-}
 
 // تشغيل للأقسام الأخرى (دائرتان فقط في كل قسم)
 var lightCanvases = document.querySelectorAll('canvas[data-role="light"]'); // جميع كانفاسات الأقسام

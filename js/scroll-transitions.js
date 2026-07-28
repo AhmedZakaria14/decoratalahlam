@@ -208,7 +208,8 @@
     );
 
     staggerContainers.forEach(container => {
-      Array.from(container.children).forEach((child, index) => {
+      const children = container.querySelectorAll('> *');
+      children.forEach((child, index) => {
         child.style.opacity = '0';
         child.style.animation = `fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) ${index * 0.04}s forwards`;
       });
