@@ -77,6 +77,11 @@ function addShellEnhancements(source) {
     .replace(/\s*<!-- SKIP LINK START -->[\s\S]*?<!-- SKIP LINK END -->\s*/g, "\n");
 
   next = next.replace(
+    /\s*<script\b[^>]*\bsrc=["']\.\/js\/(?:particles|carousel)\.min\.js(?:\?v=[^"']+)?["'][^>]*><\/script>\s*/gi,
+    "\n",
+  );
+
+  next = next.replace(
     /<\/head>/i,
     `    <!-- MODERN THEME START -->
     <link rel="stylesheet" href="./css/modern-theme.min.css?v=20260728-3">
