@@ -830,6 +830,7 @@ body.modern-site :focus-visible {
 .page-service .temp3-one-service-container {
   width: var(--modern-container) !important;
   margin: 0 auto !important;
+  background: transparent !important;
 }
 
 .page-service .temp3-one-service-title {
@@ -840,6 +841,7 @@ body.modern-site :focus-visible {
   font-weight: 900 !important;
   line-height: 1.08 !important;
   letter-spacing: -0.06em;
+  background: transparent !important;
 }
 
 .page-service .temp3-one-service-sub-title {
@@ -1030,6 +1032,10 @@ body.modern-site :focus-visible {
   grid-column: span 4;
   display: flex !important;
   flex-direction: column;
+  align-items: stretch !important;
+  width: auto !important;
+  max-width: 100% !important;
+  height: auto !important;
   min-width: 0;
   margin: 0 !important;
   overflow: hidden;
@@ -1052,6 +1058,7 @@ body.modern-site :focus-visible {
 }
 
 .page-blog-index main .blog-img {
+  width: 100% !important;
   height: 280px !important;
   overflow: hidden;
 }
@@ -1077,6 +1084,8 @@ body.modern-site :focus-visible {
   flex: 1;
   flex-direction: column;
   align-items: flex-start;
+  width: 100% !important;
+  margin: 0 !important;
   padding: 25px !important;
 }
 
@@ -1405,15 +1414,20 @@ body.modern-site :focus-visible {
 }
 
 .page-standard .temp3-our-services-container {
+  display: block !important;
   padding-block: clamp(58px, 8vw, 110px) !important;
 }
 
 .modern-site .temp3-our-services-image-section {
-  margin-top: 35px;
+  position: relative !important;
+  width: 100% !important;
+  height: auto !important;
+  margin: 35px 0 0 !important;
 }
 
 .modern-site .temp3-our-services-img-icon-parent,
 .modern-site .temp3-our-services-img-icon-container {
+  position: static !important;
   width: 100% !important;
   height: clamp(390px, 55vw, 650px) !important;
   overflow: hidden;
