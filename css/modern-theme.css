@@ -1023,7 +1023,7 @@ body.modern-site :focus-visible {
 
 .page-blog-index main .blogs-cards {
   display: grid !important;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
   gap: 20px !important;
 }
 
@@ -1909,7 +1909,7 @@ body.lightbox-open {
   }
 
   .page-blog-index main .blogs-cards {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
   }
 
   .page-blog-index main .blog-card,
