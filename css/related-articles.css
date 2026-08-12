@@ -47,3 +47,36 @@
     border-color: #c5a059;
     transform: translateY(-2px);
 }
+
+/* Crawlable contextual internal links */
+.seo-internal-links {
+    margin-top: 32px;
+    padding: 24px;
+    border-right: 5px solid #c5a059;
+    border-radius: 15px;
+    background: #f9f9f9;
+}
+
+.seo-internal-links h2 {
+    margin: 0 0 18px;
+    font-size: 1.45rem;
+}
+
+.seo-internal-links ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.seo-internal-links a {
+    display: block;
+    padding: 14px 16px;
+    border: 1px solid rgba(197, 160, 89, 0.35);
+    border-radius: 10px;
+    color: #333;
+    background: #fff;
+    text-decoration: none;
+}
