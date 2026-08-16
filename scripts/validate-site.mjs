@@ -67,13 +67,13 @@ if (!cloudflareHeaders.includes("https://:project.pages.dev/*") || !cloudflareHe
 
 const cloudflareRedirects = fs.readFileSync(path.join(root, "_redirects"), "utf8");
 const restoredArabicRedirects = {
-  "gypsum-board": "تركيب-جبس-بورد.html",
-  "marble-alternative": "تركيب-بديل-الرخام.html",
-  "wallpaper-installation": "تركيب-ورق-جدران.html",
-  "parquet-installation": "تركيب-باركيه.html",
-  "wood-cladding": "تركيب-تكسيات-خشبيه.html",
-  "chipboard-installation": "تركيب-شيبورد.html",
-  "interior-decor": "تركيب-ديكورات-داخليه.html",
+  "gypsum-board": "تركيب-جبس-بورد",
+  "marble-alternative": "تركيب-بديل-الرخام",
+  "wallpaper-installation": "تركيب-ورق-جدران",
+  "parquet-installation": "تركيب-باركيه",
+  "wood-cladding": "تركيب-تكسيات-خشبيه",
+  "chipboard-installation": "تركيب-شيبورد",
+  "interior-decor": "تركيب-ديكورات-داخليه",
 };
 for (const [route, arabicFile] of Object.entries(restoredArabicRedirects)) {
   const encodedFile = encodeURIComponent(arabicFile);
@@ -81,21 +81,24 @@ for (const [route, arabicFile] of Object.entries(restoredArabicRedirects)) {
     failures.push(`Cloudflare Arabic canonical redirect is missing for ${route}`);
   }
 }
-const extensionlessArabicRoutes = {
-  "%D9%85%D9%86%20%D9%86%D8%AD%D9%86": "%D9%85%D9%86%20%D9%86%D8%AD%D9%86.html",
-  "%D8%A7%D9%84%D8%AE%D8%AF%D9%85%D8%A7%D8%AA": "%D8%A7%D9%84%D8%AE%D8%AF%D9%85%D8%A7%D8%AA.html",
-  "%D8%A7%D8%AA%D8%B5%D9%84%20%D8%A8%D9%86%D8%A7": "%D8%A7%D8%AA%D8%B5%D9%84%20%D8%A8%D9%86%D8%A7.html",
-  "%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%A8%D8%AF%D9%8A%D9%84-%D8%A7%D9%84%D8%B1%D8%AE%D8%A7%D9%85": "%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%A8%D8%AF%D9%8A%D9%84-%D8%A7%D9%84%D8%B1%D8%AE%D8%A7%D9%85.html",
-  "%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%A8%D8%A7%D8%B1%D9%83%D9%8A%D9%87": "%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%A8%D8%A7%D8%B1%D9%83%D9%8A%D9%87.html",
-  "%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%B4%D9%8A%D8%A8%D9%88%D8%B1%D8%AF": "%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%B4%D9%8A%D8%A8%D9%88%D8%B1%D8%AF.html",
-  "%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D9%88%D8%B1%D9%82-%D8%AC%D8%AF%D8%B1%D8%A7%D9%86": "%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D9%88%D8%B1%D9%82-%D8%AC%D8%AF%D8%B1%D8%A7%D9%86.html",
-  "%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%AC%D8%A8%D8%B3-%D8%A8%D9%88%D8%B1%D8%AF": "%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%AC%D8%A8%D8%B3-%D8%A8%D9%88%D8%B1%D8%AF.html",
-  "%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%AA%D9%83%D8%B3%D9%8A%D8%A7%D8%AA-%D8%AE%D8%B4%D8%A8%D9%8A%D9%87": "%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%AA%D9%83%D8%B3%D9%8A%D8%A7%D8%AA-%D8%AE%D8%B4%D8%A8%D9%8A%D9%87.html",
-  "%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%AF%D9%8A%D9%83%D9%88%D8%B1%D8%A7%D8%AA-%D8%AF%D8%A7%D8%AE%D9%84%D9%8A%D9%87": "%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%AF%D9%8A%D9%83%D9%88%D8%B1%D8%A7%D8%AA-%D8%AF%D8%A7%D8%AE%D9%84%D9%8A%D9%87.html",
+const cleanArabicRoutes = {
+  "%D9%85%D9%86%20%D9%86%D8%AD%D9%86": "%D9%85%D9%86%20%D9%86%D8%AD%D9%86",
+  "%D8%A7%D9%84%D8%AE%D8%AF%D9%85%D8%A7%D8%AA": "%D8%A7%D9%84%D8%AE%D8%AF%D9%85%D8%A7%D8%AA",
+  "%D8%A7%D8%AA%D8%B5%D9%84%20%D8%A8%D9%86%D8%A7": "%D8%A7%D8%AA%D8%B5%D9%84%20%D8%A8%D9%86%D8%A7",
+  "%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%A8%D8%AF%D9%8A%D9%84-%D8%A7%D9%84%D8%B1%D8%AE%D8%A7%D9%85": "%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%A8%D8%AF%D9%8A%D9%84-%D8%A7%D9%84%D8%B1%D8%AE%D8%A7%D9%85",
+  "%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%A8%D8%A7%D8%B1%D9%83%D9%8A%D9%87": "%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%A8%D8%A7%D8%B1%D9%83%D9%8A%D9%87",
+  "%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%B4%D9%8A%D8%A8%D9%88%D8%B1%D8%AF": "%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%B4%D9%8A%D8%A8%D9%88%D8%B1%D8%AF",
+  "%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D9%88%D8%B1%D9%82-%D8%AC%D8%AF%D8%B1%D8%A7%D9%86": "%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D9%88%D8%B1%D9%82-%D8%AC%D8%AF%D8%B1%D8%A7%D9%86",
+  "%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%AC%D8%A8%D8%B3-%D8%A8%D9%88%D8%B1%D8%AF": "%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%AC%D8%A8%D8%B3-%D8%A8%D9%88%D8%B1%D8%AF",
+  "%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%AA%D9%83%D8%B3%D9%8A%D8%A7%D8%AA-%D8%AE%D8%B4%D8%A8%D9%8A%D9%87": "%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%AA%D9%83%D8%B3%D9%8A%D8%A7%D8%AA-%D8%AE%D8%B4%D8%A8%D9%8A%D9%87",
+  "%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%AF%D9%8A%D9%83%D9%88%D8%B1%D8%A7%D8%AA-%D8%AF%D8%A7%D8%AE%D9%84%D9%8A%D9%87": "%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%AF%D9%8A%D9%83%D9%88%D8%B1%D8%A7%D8%AA-%D8%AF%D8%A7%D8%AE%D9%84%D9%8A%D9%87",
 };
-for (const [source, target] of Object.entries(extensionlessArabicRoutes)) {
-  if (!cloudflareRedirects.includes(`/${source} /${target} 308`)) {
-    failures.push(`Cloudflare extensionless Arabic redirect is missing for ${source}`);
+for (const [source, target] of Object.entries(cleanArabicRoutes)) {
+  if (!cloudflareRedirects.includes(`/${source}.html /${target} 308`)) {
+    failures.push(`Cloudflare legacy Arabic HTML redirect is missing for ${source}`);
+  }
+  if (cloudflareRedirects.includes(`/${source} /${target}.html 308`)) {
+    failures.push(`Cloudflare Arabic redirect loop remains for ${source}`);
   }
 }
 
