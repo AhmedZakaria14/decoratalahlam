@@ -22,16 +22,16 @@ Decorat Al Ahlam provides interior design and decoration services for homes, vil
 ## Main Pages
 
 - Home: https://decoratalahlam.com/
-- Services: https://decoratalahlam.com/services-ar
-- About: https://decoratalahlam.com/about-us
-- Contact: https://decoratalahlam.com/contact-us
+- Services: https://decoratalahlam.com/%D8%A7%D9%84%D8%AE%D8%AF%D9%85%D8%A7%D8%AA.html
+- About: https://decoratalahlam.com/%D9%85%D9%86%20%D9%86%D8%AD%D9%86.html
+- Contact: https://decoratalahlam.com/%D8%A7%D8%AA%D8%B5%D9%84%20%D8%A8%D9%86%D8%A7.html
 - Blog: https://decoratalahlam.com/blog
-- Gypsum board: https://decoratalahlam.com/gypsum-board-ar
-- Marble alternative: https://decoratalahlam.com/marble-alternative-ar
-- Wallpaper: https://decoratalahlam.com/wallpaper-installation-ar
-- Parquet: https://decoratalahlam.com/parquet-installation-ar
-- Wood cladding: https://decoratalahlam.com/wood-cladding-ar
-- Chipboard: https://decoratalahlam.com/chipboard-installation-ar
+- Gypsum board: https://decoratalahlam.com/%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%AC%D8%A8%D8%B3-%D8%A8%D9%88%D8%B1%D8%AF.html
+- Marble alternative: https://decoratalahlam.com/%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%A8%D8%AF%D9%8A%D9%84-%D8%A7%D9%84%D8%B1%D8%AE%D8%A7%D9%85.html
+- Wallpaper: https://decoratalahlam.com/%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D9%88%D8%B1%D9%82-%D8%AC%D8%AF%D8%B1%D8%A7%D9%86.html
+- Parquet: https://decoratalahlam.com/%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%A8%D8%A7%D8%B1%D9%83%D9%8A%D9%87.html
+- Wood cladding: https://decoratalahlam.com/%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%AA%D9%83%D8%B3%D9%8A%D8%A7%D8%AA-%D8%AE%D8%B4%D8%A8%D9%8A%D9%87.html
+- Chipboard: https://decoratalahlam.com/%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%B4%D9%8A%D8%A8%D9%88%D8%B1%D8%AF.html
 
 ## Discovery
 

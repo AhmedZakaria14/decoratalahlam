@@ -66,8 +66,20 @@ if (!cloudflareHeaders.includes("/sitemap.xml") || !cloudflareHeaders.includes("
 if (!cloudflareHeaders.includes("https://:project.pages.dev/*") || !cloudflareHeaders.includes("noindex")) failures.push("Cloudflare pages.dev noindex rule is missing");
 
 const cloudflareRedirects = fs.readFileSync(path.join(root, "_redirects"), "utf8");
-for (const route of ["gypsum-board", "marble-alternative", "wallpaper-installation", "parquet-installation", "wood-cladding", "chipboard-installation", "interior-decor"]) {
-  if (!cloudflareRedirects.includes(`/${route} /${route}-ar 308`)) failures.push(`Cloudflare canonical redirect is missing for ${route}`);
+const restoredArabicRedirects = {
+  "gypsum-board": "تركيب-جبس-بورد.html",
+  "marble-alternative": "تركيب-بديل-الرخام.html",
+  "wallpaper-installation": "تركيب-ورق-جدران.html",
+  "parquet-installation": "تركيب-باركيه.html",
+  "wood-cladding": "تركيب-تكسيات-خشبيه.html",
+  "chipboard-installation": "تركيب-شيبورد.html",
+  "interior-decor": "تركيب-ديكورات-داخليه.html",
+};
+for (const [route, arabicFile] of Object.entries(restoredArabicRedirects)) {
+  const encodedFile = encodeURIComponent(arabicFile);
+  if (!cloudflareRedirects.includes(`/${route} /${encodedFile} 308`)) {
+    failures.push(`Cloudflare Arabic canonical redirect is missing for ${route}`);
+  }
 }
 
 const sitemap = fs.readFileSync(path.join(root, "sitemap.xml"), "utf8");
@@ -76,7 +88,8 @@ if (new Set(sitemapUrls).size !== sitemapUrls.length) failures.push("sitemap.xml
 for (const url of sitemapUrls) {
   if (!url.startsWith("https://decoratalahlam.com/")) failures.push(`sitemap.xml contains a non-production URL: ${url}`);
   const route = new URL(url).pathname.replace(/^\//, "") || "index";
-  const file = route === "index" ? "index.html" : `${route}.html`;
+  const decodedRoute = decodeURIComponent(route);
+  const file = decodedRoute === "index" ? "index.html" : decodedRoute.endsWith(".html") ? decodedRoute : `${decodedRoute}.html`;
   if (!fs.existsSync(path.join(root, file))) failures.push(`sitemap.xml route has no HTML file: ${url}`);
   else {
     const html = fs.readFileSync(path.join(root, file), "utf8");
