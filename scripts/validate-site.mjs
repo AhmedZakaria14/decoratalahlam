@@ -81,6 +81,23 @@ for (const [route, arabicFile] of Object.entries(restoredArabicRedirects)) {
     failures.push(`Cloudflare Arabic canonical redirect is missing for ${route}`);
   }
 }
+const extensionlessArabicRoutes = {
+  "%D9%85%D9%86%20%D9%86%D8%AD%D9%86": "%D9%85%D9%86%20%D9%86%D8%AD%D9%86.html",
+  "%D8%A7%D9%84%D8%AE%D8%AF%D9%85%D8%A7%D8%AA": "%D8%A7%D9%84%D8%AE%D8%AF%D9%85%D8%A7%D8%AA.html",
+  "%D8%A7%D8%AA%D8%B5%D9%84%20%D8%A8%D9%86%D8%A7": "%D8%A7%D8%AA%D8%B5%D9%84%20%D8%A8%D9%86%D8%A7.html",
+  "%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%A8%D8%AF%D9%8A%D9%84-%D8%A7%D9%84%D8%B1%D8%AE%D8%A7%D9%85": "%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%A8%D8%AF%D9%8A%D9%84-%D8%A7%D9%84%D8%B1%D8%AE%D8%A7%D9%85.html",
+  "%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%A8%D8%A7%D8%B1%D9%83%D9%8A%D9%87": "%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%A8%D8%A7%D8%B1%D9%83%D9%8A%D9%87.html",
+  "%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%B4%D9%8A%D8%A8%D9%88%D8%B1%D8%AF": "%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%B4%D9%8A%D8%A8%D9%88%D8%B1%D8%AF.html",
+  "%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D9%88%D8%B1%D9%82-%D8%AC%D8%AF%D8%B1%D8%A7%D9%86": "%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D9%88%D8%B1%D9%82-%D8%AC%D8%AF%D8%B1%D8%A7%D9%86.html",
+  "%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%AC%D8%A8%D8%B3-%D8%A8%D9%88%D8%B1%D8%AF": "%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%AC%D8%A8%D8%B3-%D8%A8%D9%88%D8%B1%D8%AF.html",
+  "%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%AA%D9%83%D8%B3%D9%8A%D8%A7%D8%AA-%D8%AE%D8%B4%D8%A8%D9%8A%D9%87": "%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%AA%D9%83%D8%B3%D9%8A%D8%A7%D8%AA-%D8%AE%D8%B4%D8%A8%D9%8A%D9%87.html",
+  "%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%AF%D9%8A%D9%83%D9%88%D8%B1%D8%A7%D8%AA-%D8%AF%D8%A7%D8%AE%D9%84%D9%8A%D9%87": "%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%AF%D9%8A%D9%83%D9%88%D8%B1%D8%A7%D8%AA-%D8%AF%D8%A7%D8%AE%D9%84%D9%8A%D9%87.html",
+};
+for (const [source, target] of Object.entries(extensionlessArabicRoutes)) {
+  if (!cloudflareRedirects.includes(`/${source} /${target} 308`)) {
+    failures.push(`Cloudflare extensionless Arabic redirect is missing for ${source}`);
+  }
+}
 
 const sitemap = fs.readFileSync(path.join(root, "sitemap.xml"), "utf8");
 const sitemapUrls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1]);
