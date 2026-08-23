@@ -1,6 +1,11 @@
 User-agent: *
 Allow: /
 
+# Google Search must be able to crawl and index the public site.
+User-agent: Googlebot
+Allow: /
+
+# Do not expose the site to third-party training crawlers.
 User-agent: Amazonbot
 Disallow: /
 
