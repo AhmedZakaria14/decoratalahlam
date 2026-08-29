@@ -83,6 +83,12 @@ for line in (ROOT / '_redirects').read_text(encoding='utf-8').splitlines():
     if not line.strip() or line.lstrip().startswith('#'): continue
     parts = line.split()
     if len(parts) >= 3: redirect_sources[parts[0]] = (parts[1], parts[2])
+
+canonical_paths = {urlparse(url).path or '/' for url in expected_urls}
+for source, (target, status) in redirect_sources.items():
+    if status in {'301', '308'} and target not in canonical_paths:
+        errors.append(f'_redirects: permanent redirect {source} points to non-canonical target {target}')
+
 for filename, canonical in canonical_by_file.items():
     if filename == 'index.html': continue
     source = '/' + filename.encode('utf-8').decode('utf-8')

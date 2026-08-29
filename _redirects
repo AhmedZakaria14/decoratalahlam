@@ -13,7 +13,7 @@
 /wallpaper-installation-ar /%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D9%88%D8%B1%D9%82-%D8%AC%D8%AF%D8%B1%D8%A7%D9%86 301
 /wallpaper-installation-ar/ /%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D9%88%D8%B1%D9%82-%D8%AC%D8%AF%D8%B1%D8%A7%D9%86 301
 /wallpaper-installation-ar.html /%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D9%88%D8%B1%D9%82-%D8%AC%D8%AF%D8%B1%D8%A7%D9%86 301
-/chipboard-installation-ar /%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%B4%D9%8A%D8%AA%D8%A8%D9%88%D8%B1%D8%AF 301
+/chipboard-installation-ar /%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%B4%D9%8A%D8%A8%D9%88%D8%B1%D8%AF 301
 /chipboard-installation-ar/ /%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%B4%D9%8A%D8%A8%D9%88%D8%B1%D8%AF 301
 /chipboard-installation-ar.html /%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%B4%D9%8A%D8%A8%D9%88%D8%B1%D8%AF 301
 /parquet-installation-ar /%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%A8%D8%A7%D8%B1%D9%83%D9%8A%D9%87 301
@@ -25,6 +25,11 @@
 /chipboard-installation /%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%B4%D9%8A%D8%A8%D9%88%D8%B1%D8%AF 301
 /chipboard-installation/ /%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%B4%D9%8A%D8%A8%D9%88%D8%B1%D8%AF 301
 /chipboard-installation.html /%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%B4%D9%8A%D8%A8%D9%88%D8%B1%D8%AF 301
+
+# Consolidate the misspelled legacy slug (شيتبورد) into the canonical شيبورد URL.
+/%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%B4%D9%8A%D8%AA%D8%A8%D9%88%D8%B1%D8%AF /%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%B4%D9%8A%D8%A8%D9%88%D8%B1%D8%AF 301
+/%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%B4%D9%8A%D8%AA%D8%A8%D9%88%D8%B1%D8%AF/ /%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%B4%D9%8A%D8%A8%D9%88%D8%B1%D8%AF 301
+/%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%B4%D9%8A%D8%AA%D8%A8%D9%88%D8%B1%D8%AF.html /%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%B4%D9%8A%D8%A8%D9%88%D8%B1%D8%AF 301
 /marble-alternative-ar /%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%A8%D8%AF%D9%8A%D9%84-%D8%A7%D9%84%D8%B1%D8%AE%D8%A7%D9%85 301
 /marble-alternative-ar/ /%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%A8%D8%AF%D9%8A%D9%84-%D8%A7%D9%84%D8%B1%D8%AE%D8%A7%D9%85 301
 /marble-alternative-ar.html /%D8%AA%D8%B1%D9%83%D9%8A%D8%A8-%D8%A8%D8%AF%D9%8A%D9%84-%D8%A7%D9%84%D8%B1%D8%AE%D8%A7%D9%85 301
